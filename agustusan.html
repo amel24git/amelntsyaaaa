@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Semarak Agustusan - Desa Pusaka</title>
+
+    <link rel="stylesheet" href="style.css">
+
+
+    <style>
+
+        /* =================================================
+           VIDEO CARD
+           ================================================= */
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            border-radius: 20px;
+            overflow: hidden;
+            background: #000;
+        }
+
+
+        .video-wrapper video {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            display: block;
+            object-fit: cover;
+            background: #000;
+        }
+
+
+        /* Tombol buka video */
+
+        .open-video {
+            position: absolute;
+
+            left: 50%;
+            top: 50%;
+
+            transform: translate(-50%, -50%);
+
+            padding: 13px 24px;
+
+            border: 2px solid white;
+
+            border-radius: 30px;
+
+            background: rgba(0, 91, 145, 0.9);
+
+            color: white;
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 8px 25px rgba(0,0,0,0.35);
+
+            transition: 0.3s;
+
+            z-index: 10;
+        }
+
+
+        .open-video:hover {
+            transform:
+                translate(-50%, -50%)
+                scale(1.08);
+
+            background: #075b91;
+        }
+
+
+        /* =================================================
+           POPUP VIDEO
+           UKURAN 9 : 16
+           ================================================= */
+
+        .video-lightbox {
+
+            position: fixed;
+
+            inset: 0;
+
+            z-index: 99999;
+
+            display: none;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 15px;
+
+            background:
+                rgba(0, 20, 40, 0.96);
+
+            backdrop-filter: blur(10px);
+        }
+
+
+        .video-lightbox.show {
+            display: flex;
+        }
+
+
+        /* PLAYER 9:16 */
+
+        .video-popup {
+
+            position: relative;
+
+            width: min(90vw, 450px);
+
+            height: min(90vh, 800px);
+
+            aspect-ratio: 9 / 16;
+
+            background: #000;
+
+            border-radius: 22px;
+
+            overflow: hidden;
+
+            border: 2px solid rgba(255,255,255,0.9);
+
+            box-shadow:
+                0 25px 70px rgba(0,0,0,0.7);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+        }
+
+
+        /* VIDEO POPUP */
+
+        .video-popup video {
+
+            width: 100%;
+
+            height: 100%;
+
+            display: block;
+
+            background: #000;
+
+            /*
+               Menjaga video tetap utuh.
+               Tidak dipaksa memenuhi layar
+               jika rasio asli berbeda.
+            */
+
+            object-fit: contain;
+        }
+
+
+        /* TOMBOL CLOSE */
+
+        .close-video {
+
+            position: absolute;
+
+            top: 12px;
+
+            right: 12px;
+
+            z-index: 100000;
+
+            width: 42px;
+
+            height: 42px;
+
+            border: none;
+
+            border-radius: 50%;
+
+            background: rgba(255,255,255,0.95);
+
+            color: #075b91;
+
+            font-size: 28px;
+
+            font-weight: bold;
+
+            line-height: 1;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 5px 20px rgba(0,0,0,0.4);
+
+            transition: 0.2s;
+        }
+
+
+        .close-video:hover {
+
+            background: #075b91;
+
+            color: white;
+
+            transform: scale(1.1);
+        }
+
+
+        /* =================================================
+           HP
+           ================================================= */
+
+        @media (max-width: 600px) {
+
+            .video-lightbox {
+
+                padding: 8px;
+
+            }
+
+
+            .video-popup {
+
+                width: 90vw;
+
+                height: calc(90vw * 16 / 9);
+
+                max-height: 92vh;
+
+                border-radius: 18px;
+
+            }
+
+
+            .close-video {
+
+                width: 38px;
+
+                height: 38px;
+
+                top: 9px;
+
+                right: 9px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body class="agustusan-page">
+
+
+<!-- =====================================================
+     NAVBAR
+     ===================================================== -->
+
+<header class="navbar">
+
+    <div class="nav-container">
+
+        <a href="index.html" class="logo">
+
+            <span class="logo-icon">🏡</span>
+
+            <span>DESA PUSAKA</span>
+
+        </a>
+
+
+        <button class="menu-toggle" id="menuToggle">
+
+            ☰
+
+        </button>
+
+
+        <nav id="navMenu">
+
+            <a href="index.html">
+                Beranda
+            </a>
+
+            <a href="tentang.html">
+                Tentang Desa
+            </a>
+
+            <a href="galeri.html">
+                Galeri Desa
+            </a>
+
+            <a href="agustusan.html" class="active">
+                Semarak Agustusan
+            </a>
+
+            <a href="kontak.html">
+                Kontak
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     HERO
+     ===================================================== -->
+
+<section class="page-hero independence-hero">
+
+    <div class="flag-animation flag-left"></div>
+
+    <div class="flag-animation flag-right"></div>
+
+    <div class="cloud cloud1"></div>
+
+    <div class="cloud cloud2"></div>
+
+
+    <div class="page-hero-content">
+
+        <span>
+            🇮🇩 HUT KEMERDEKAAN REPUBLIK INDONESIA
+        </span>
+
+
+        <h1>
+            SEMARAK AGUSTUSAN
+        </h1>
+
+
+        <p>
+            Semangat kemerdekaan, kebersamaan,
+            dan keceriaan warga Desa Pusaka.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SEMANGAT
+     ===================================================== -->
+
+<section class="section">
+
+    <div class="section-heading reveal">
+
+        <span>
+            🇮🇩 SEMANGAT KEMERDEKAAN
+        </span>
+
+
+        <h2>
+            Merayakan Kemerdekaan Bersama
+        </h2>
+
+
+        <p>
+            Perayaan Agustusan menjadi momen bagi
+            seluruh masyarakat untuk berkumpul,
+            bergembira, dan mempererat persaudaraan.
+        </p>
+
+    </div>
+
+
+
+    <div class="info-grid">
+
+
+        <article class="independence-card reveal">
+
+            <span>🎉</span>
+
+            <h3>
+                Kemeriahan Warga
+            </h3>
+
+            <p>
+                Berbagai kegiatan meriah diikuti
+                oleh masyarakat Desa Pusaka.
+            </p>
+
+        </article>
+
+
+
+        <article class="independence-card reveal">
+
+            <span>🏃</span>
+
+            <h3>
+                Perlombaan
+            </h3>
+
+            <p>
+                Berbagai perlombaan tradisional
+                memeriahkan suasana kemerdekaan.
+            </p>
+
+        </article>
+
+
+
+        <article class="independence-card reveal">
+
+            <span>🤝</span>
+
+            <h3>
+                Gotong Royong
+            </h3>
+
+            <p>
+                Semangat kerja sama menjadi bagian
+                penting dari perayaan desa.
+            </p>
+
+        </article>
+
+
+
+        <article class="independence-card reveal">
+
+            <span>🎊</span>
+
+            <h3>
+                Hiburan Rakyat
+            </h3>
+
+            <p>
+                Warga berkumpul menikmati hiburan
+                dan suasana penuh kebahagiaan.
+            </p>
+
+        </article>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VIDEO
+     ===================================================== -->
+
+<section class="section blue-section">
+
+
+    <div class="section-heading reveal">
+
+        <span>
+            🎬 DOKUMENTASI VIDEO
+        </span>
+
+
+        <h2>
+            Video Semarak Agustusan
+        </h2>
+
+
+        <p>
+            Saksikan kemeriahan kegiatan Agustusan
+            Desa Pusaka.
+        </p>
+
+    </div>
+
+
+
+    <div class="video-grid">
+
+
+        <!-- =================================================
+             VIDEO 1
+             ================================================= -->
+
+        <article class="video-card reveal">
+
+
+            <div class="video-wrapper">
+
+                <video
+                    controls
+                    preload="metadata"
+                    playsinline
+                    controlsList="nofullscreen"
+                    disablePictureInPicture>
+
+                    <source
+                        src="agustus.mp4.mp4"
+                        type="video/mp4">
+
+                    Browser Anda tidak mendukung video.
+
+                </video>
+
+
+                <button
+                    class="open-video"
+                    onclick="openVideo('agustus.mp4.mp4')">
+
+                    ▶ BUKA VIDEO
+
+                </button>
+
+            </div>
+
+
+
+            <div class="video-info">
+
+                <span>
+                    🇮🇩 VIDEO 01
+                </span>
+
+
+                <h3>
+                    Lomba 17 Agustus
+                </h3>
+
+
+                <p>
+                    Keseruan perlombaan warga
+                    Desa Pusaka.
+                </p>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- =================================================
+             VIDEO 2
+             ================================================= -->
+
+        <article class="video-card reveal">
+
+
+            <div class="video-wrapper">
+
+                <video
+                    controls
+                    preload="metadata"
+                    playsinline
+                    controlsList="nofullscreen"
+                    disablePictureInPicture>
+
+                    <source
+                        src="agustus2.mp4.mp4"
+                        type="video/mp4">
+
+                    Browser Anda tidak mendukung video.
+
+                </video>
+
+
+                <button
+                    class="open-video"
+                    onclick="openVideo('agustus2.mp4.mp4')">
+
+                    ▶ BUKA VIDEO
+
+                </button>
+
+            </div>
+
+
+
+            <div class="video-info">
+
+                <span>
+                    🇮🇩 VIDEO 02
+                </span>
+
+
+                <h3>
+                    Permainan Tradisional
+                </h3>
+
+
+                <p>
+                    Permainan dan kebersamaan
+                    masyarakat desa.
+                </p>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- =================================================
+             VIDEO 3
+             ================================================= -->
+
+        <article class="video-card reveal">
+
+
+            <div class="video-wrapper">
+
+                <video
+                    controls
+                    preload="metadata"
+                    playsinline
+                    controlsList="nofullscreen"
+                    disablePictureInPicture>
+
+                    <source
+                        src="agustus3.mp4.mp4"
+                        type="video/mp4">
+
+                    Browser Anda tidak mendukung video.
+
+                </video>
+
+
+                <button
+                    class="open-video"
+                    onclick="openVideo('agustus3.mp4.mp4')">
+
+                    ▶ BUKA VIDEO
+
+                </button>
+
+            </div>
+
+
+
+            <div class="video-info">
+
+                <span>
+                    🇮🇩 VIDEO 03
+                </span>
+
+
+                <h3>
+                    Kebersamaan Warga
+                </h3>
+
+
+                <p>
+                    Suasana perayaan kemerdekaan
+                    di Desa Pusaka.
+                </p>
+
+            </div>
+
+        </article>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     POPUP VIDEO 9:16
+     ===================================================== -->
+
+<div
+    id="videoLightbox"
+    class="video-lightbox">
+
+
+    <div class="video-popup">
+
+
+        <button
+            class="close-video"
+            onclick="closeVideo()">
+
+            ×
+
+        </button>
+
+
+        <video
+            id="popupVideo"
+            controls
+            playsinline
+            preload="auto"
+            controlsList="nofullscreen"
+            disablePictureInPicture>
+
+        </video>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     FOTO
+     ===================================================== -->
+
+<section class="section">
+
+
+    <div class="section-heading reveal">
+
+        <span>
+            📸 FOTO KEGIATAN
+        </span>
+
+
+        <h2>
+            Momen Semarak Agustusan
+        </h2>
+
+    </div>
+
+
+
+    <div class="agustus-gallery">
+
+
+        <div class="agustus-photo reveal">
+
+            <img
+                src="agustus.jpg"
+                alt="Kegiatan Agustusan">
+
+
+            <div>
+
+                <h3>
+                    Perayaan Kemerdekaan
+                </h3>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="agustus-photo reveal">
+
+            <img
+                src="kampung.jpg"
+                alt="Suasana Desa">
+
+
+            <div>
+
+                <h3>
+                    Kebersamaan Warga
+                </h3>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+     ===================================================== -->
+
+<footer class="footer">
+
+
+    <div class="footer-content">
+
+
+        <div>
+
+            <h3>
+                🏡 DESA PUSAKA
+            </h3>
+
+            <p>
+                🇮🇩 Semangat Kemerdekaan.
+            </p>
+
+        </div>
+
+
+
+        <div>
+
+            <h4>
+                Navigasi
+            </h4>
+
+
+            <a href="index.html">
+                Beranda
+            </a>
+
+            <a href="tentang.html">
+                Tentang Desa
+            </a>
+
+            <a href="galeri.html">
+                Galeri
+            </a>
+
+            <a href="agustusan.html">
+                Agustusan
+            </a>
+
+            <a href="kontak.html">
+                Kontak
+            </a>
+
+        </div>
+
+
+
+        <div>
+
+            <h4>
+                Kontak
+            </h4>
+
+
+            <p>
+                📱 083852501005
+            </p>
+
+            <p>
+                📍 Desa Pusaka
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="copyright">
+
+        © 2026 Desa Pusaka.
+
+    </div>
+
+
+</footer>
+
+
+
+<!-- =====================================================
+     SCRIPT
+     ===================================================== -->
+
+<script src="script.js"></script>
+
+
+<script>
+
+    /* =================================================
+       BUKA VIDEO
+       ================================================= */
+
+    function openVideo(videoFile) {
+
+        const lightbox =
+            document.getElementById("videoLightbox");
+
+        const popupVideo =
+            document.getElementById("popupVideo");
+
+
+        if (!lightbox || !popupVideo) {
+            return;
+        }
+
+
+        /* Masukkan video */
+
+        popupVideo.src = videoFile;
+
+
+        /* Tampilkan popup */
+
+        lightbox.classList.add("show");
+
+
+        /* Matikan scroll halaman */
+
+        document.body.style.overflow = "hidden";
+
+
+        /* Jalankan video */
+
+        popupVideo.play().catch(function () {
+
+            /* Browser dapat meminta Play manual */
+
+        });
+
+    }
+
+
+
+    /* =================================================
+       TUTUP VIDEO
+       ================================================= */
+
+    function closeVideo() {
+
+        const lightbox =
+            document.getElementById("videoLightbox");
+
+        const popupVideo =
+            document.getElementById("popupVideo");
+
+
+        if (!lightbox || !popupVideo) {
+            return;
+        }
+
+
+        /* Hentikan video */
+
+        popupVideo.pause();
+
+
+        /* Bersihkan sumber video */
+
+        popupVideo.removeAttribute("src");
+
+        popupVideo.load();
+
+
+        /* Tutup popup */
+
+        lightbox.classList.remove("show");
+
+
+        /* Aktifkan kembali scroll */
+
+        document.body.style.overflow = "";
+
+    }
+
+
+
+    /* =================================================
+       KLIK BAGIAN GELAP UNTUK MENUTUP
+       ================================================= */
+
+    document.addEventListener(
+        "click",
+        function(event) {
+
+            const lightbox =
+                document.getElementById("videoLightbox");
+
+
+            if (
+                lightbox &&
+                event.target === lightbox
+            ) {
+
+                closeVideo();
+
+            }
+
+        }
+    );
+
+
+
+    /* =================================================
+       TOMBOL ESC
+       ================================================= */
+
+    document.addEventListener(
+        "keydown",
+        function(event) {
+
+            if (event.key === "Escape") {
+
+                closeVideo();
+
+            }
+
+        }
+    );
+
+</script>
+
+
+</body>
+
+</html>
