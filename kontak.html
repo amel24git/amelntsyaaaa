@@ -262,7 +262,7 @@
 </section>
 
 
-<!-- FORM -->
+<!-- FORM PESAN -->
 <section class="section">
 
     <div class="contact-form-wrapper reveal">
@@ -337,6 +337,133 @@
                 class="btn btn-primary submit-button">
 
                 KIRIM PESAN
+
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<!-- FORM ADUAN -->
+<section class="section">
+
+    <div class="contact-form-wrapper reveal">
+
+        <div class="section-heading">
+
+            <span>📢 ADUAN MASYARAKAT</span>
+
+            <h2>
+                Kirim Aduan
+            </h2>
+
+            <p>
+                Sampaikan aduan, keluhan, atau masukan
+                kepada Desa Pusaka.
+            </p>
+
+        </div>
+
+
+        <form id="aduanForm">
+
+            <div class="form-group">
+
+                <label for="aduanNama">
+                    Nama
+                </label>
+
+                <input
+                    type="text"
+                    id="aduanNama"
+                    name="nama"
+                    placeholder="Masukkan nama Anda"
+                    required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="aduanKategori">
+                    Kategori
+                </label>
+
+                <select
+                    id="aduanKategori"
+                    name="kategori"
+                    required>
+
+                    <option value="">
+                        Pilih kategori
+                    </option>
+
+                    <option value="Infrastruktur">
+                        Infrastruktur
+                    </option>
+
+                    <option value="Kebersihan">
+                        Kebersihan
+                    </option>
+
+                    <option value="Pelayanan">
+                        Pelayanan
+                    </option>
+
+                    <option value="Lingkungan">
+                        Lingkungan
+                    </option>
+
+                    <option value="Lainnya">
+                        Lainnya
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="aduanJudul">
+                    Judul
+                </label>
+
+                <input
+                    type="text"
+                    id="aduanJudul"
+                    name="judul"
+                    placeholder="Masukkan judul aduan"
+                    required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="aduanDeskripsi">
+                    Deskripsi
+                </label>
+
+                <textarea
+                    id="aduanDeskripsi"
+                    name="deskripsi"
+                    rows="6"
+                    placeholder="Jelaskan aduan Anda..."
+                    required></textarea>
+
+            </div>
+
+
+            <button
+                type="submit"
+                id="aduanSubmit"
+                class="btn btn-primary submit-button">
+
+                KIRIM ADUAN
 
             </button>
 
