@@ -158,98 +158,167 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
     }
+
+
     /* ===============================
-       FORM ADUAN → GOOGLE SHEETS
+       FORM ADUAN
+       GOOGLE SHEETS
     =============================== */
 
-    const aduanForm = document.getElementById("aduanForm");
+    const aduanForm =
+        document.getElementById("aduanForm");
 
     if (aduanForm) {
 
         const SCRIPT_URL =
-            "https://script.google.com/macros/s/AKfycbyiWALzpMsFqJUGFlT-S8Sj26LqauOqovFBI4WHFnsgAWBXH7NZPwV4fQfMC_1bhpT0/exec";
+            "https://script.google.com/macros/s/AKfycbzgDVCYu_32Z3o5bUEOuWlJMJsNV8ii3ONp-7RtaQUtfZ0EedTNQujXo5jVH91hS0Vr/exec";
 
-        aduanForm.addEventListener("submit", function (event) {
 
-            event.preventDefault();
+        aduanForm.addEventListener(
+            "submit",
+            function (event) {
 
-            const nama =
-                document.getElementById("nama").value.trim();
+                event.preventDefault();
 
-            const kategori =
-                document.getElementById("kategori").value;
 
-            const judul =
-                document.getElementById("judul").value.trim();
+                const nama =
+                    document
+                    .getElementById("aduanNama")
+                    .value
+                    .trim();
 
-            const deskripsi =
-                document.getElementById("deskripsi").value.trim();
 
-            if (!nama || !kategori || !judul || !deskripsi) {
-                alert("Mohon lengkapi semua data aduan.");
-                return;
-            }
+                const kategori =
+                    document
+                    .getElementById("aduanKategori")
+                    .value;
 
-            const submitButton =
-                aduanForm.querySelector('button[type="submit"]');
 
-            if (submitButton) {
-                submitButton.disabled = true;
-                submitButton.textContent = "Mengirim...";
-            }
+                const judul =
+                    document
+                    .getElementById("aduanJudul")
+                    .value
+                    .trim();
 
-            const data = {
-                nama: nama,
-                kategori: kategori,
-                judul: judul,
-                deskripsi: deskripsi,
-                status: "Menunggu"
-            };
 
-            fetch(SCRIPT_URL, {
-                method: "POST",
-                body: JSON.stringify(data)
-            })
-            .then(function (response) {
-                return response.json();
-            })
-            .then(function (result) {
+                const deskripsi =
+                    document
+                    .getElementById("aduanDeskripsi")
+                    .value
+                    .trim();
 
-                if (result.success) {
 
-                    alert("Aduan berhasil dikirim.");
+                const button =
+                    document
+                    .getElementById("aduanSubmit");
 
-                    aduanForm.reset();
 
-                } else {
+                /* Validasi */
+
+                if (
+                    !nama ||
+                    !kategori ||
+                    !judul ||
+                    !deskripsi
+                ) {
 
                     alert(
-                        "Aduan gagal dikirim: " +
-                        (result.message || "Terjadi kesalahan.")
+                        "Mohon lengkapi semua data aduan."
                     );
 
+                    return;
                 }
 
-            })
-            .catch(function (error) {
 
-                console.error(error);
+                /* Tombol loading */
 
-                alert(
-                    "Aduan gagal dikirim. Silakan coba lagi."
-                );
+                button.disabled = true;
 
-            })
-            .finally(function () {
+                button.textContent =
+                    "MENGIRIM...";
 
-                if (submitButton) {
-                    submitButton.disabled = false;
-                    submitButton.textContent = "Kirim Aduan";
-                }
 
-            });
+                /* Data yang dikirim */
 
-        });
+                const data = {
+
+                    nama: nama,
+
+                    kategori: kategori,
+
+                    judul: judul,
+
+                    deskripsi: deskripsi,
+
+                    status: "Menunggu"
+
+                };
+
+
+                /* Kirim ke Apps Script */
+
+                fetch(
+                    SCRIPT_URL,
+                    {
+                        method: "POST",
+
+                        body: JSON.stringify(data)
+                    }
+                )
+
+                .then(function (response) {
+
+                    return response.json();
+
+                })
+
+                .then(function (result) {
+
+                    if (result.success) {
+
+                        alert(
+                            "Aduan berhasil dikirim."
+                        );
+
+                        aduanForm.reset();
+
+                    } else {
+
+                        alert(
+                            "Aduan gagal dikirim."
+                        );
+
+                    }
+
+                })
+
+                .catch(function (error) {
+
+                    console.error(
+                        "Error:",
+                        error
+                    );
+
+                    alert(
+                        "Terjadi kesalahan saat mengirim aduan."
+                    );
+
+                })
+
+                .finally(function () {
+
+                    button.disabled = false;
+
+                    button.textContent =
+                        "KIRIM ADUAN";
+
+                });
+
+            }
+        );
+
     }
 
 });
+
+S
