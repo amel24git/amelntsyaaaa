@@ -158,5 +158,98 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
     }
+    /* ===============================
+       FORM ADUAN → GOOGLE SHEETS
+    =============================== */
+
+    const aduanForm = document.getElementById("aduanForm");
+
+    if (aduanForm) {
+
+        const SCRIPT_URL =
+            "https://script.google.com/macros/s/AKfycbyiWALzpMsFqJUGFlT-S8Sj26LqauOqovFBI4WHFnsgAWBXH7NZPwV4fQfMC_1bhpT0/exec";
+
+        aduanForm.addEventListener("submit", function (event) {
+
+            event.preventDefault();
+
+            const nama =
+                document.getElementById("nama").value.trim();
+
+            const kategori =
+                document.getElementById("kategori").value;
+
+            const judul =
+                document.getElementById("judul").value.trim();
+
+            const deskripsi =
+                document.getElementById("deskripsi").value.trim();
+
+            if (!nama || !kategori || !judul || !deskripsi) {
+                alert("Mohon lengkapi semua data aduan.");
+                return;
+            }
+
+            const submitButton =
+                aduanForm.querySelector('button[type="submit"]');
+
+            if (submitButton) {
+                submitButton.disabled = true;
+                submitButton.textContent = "Mengirim...";
+            }
+
+            const data = {
+                nama: nama,
+                kategori: kategori,
+                judul: judul,
+                deskripsi: deskripsi,
+                status: "Menunggu"
+            };
+
+            fetch(SCRIPT_URL, {
+                method: "POST",
+                body: JSON.stringify(data)
+            })
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (result) {
+
+                if (result.success) {
+
+                    alert("Aduan berhasil dikirim.");
+
+                    aduanForm.reset();
+
+                } else {
+
+                    alert(
+                        "Aduan gagal dikirim: " +
+                        (result.message || "Terjadi kesalahan.")
+                    );
+
+                }
+
+            })
+            .catch(function (error) {
+
+                console.error(error);
+
+                alert(
+                    "Aduan gagal dikirim. Silakan coba lagi."
+                );
+
+            })
+            .finally(function () {
+
+                if (submitButton) {
+                    submitButton.disabled = false;
+                    submitButton.textContent = "Kirim Aduan";
+                }
+
+            });
+
+        });
+    }
 
 });
