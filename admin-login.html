@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login Admin - Desa Pusaka</title>
+
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" href="gambar/favicon.png">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background:
+                linear-gradient(rgba(20, 90, 140, .65), rgba(20, 90, 140, .65)),
+                url("gambar/kampung.jpg") center/cover no-repeat;
+            padding: 20px;
+        }
+
+        .login-container {
+            width: 100%;
+            max-width: 420px;
+        }
+
+        .login-card {
+            background: rgba(255, 255, 255, 0.94);
+            padding: 40px 35px;
+            border-radius: 25px;
+            box-shadow: 0 15px 40px rgba(0,0,0,.25);
+            text-align: center;
+            backdrop-filter: blur(10px);
+            animation: muncul .7s ease;
+        }
+
+        @keyframes muncul {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .logo {
+            width: 75px;
+            height: 75px;
+            margin: auto;
+            border-radius: 50%;
+            background: #dff4ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 38px;
+            margin-bottom: 18px;
+        }
+
+        h1 {
+            color: #176b9c;
+            font-size: 27px;
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            color: #777;
+            font-size: 14px;
+            margin-bottom: 28px;
+        }
+
+        .input-group {
+            text-align: left;
+            margin-bottom: 18px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 7px;
+            color: #345;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 13px 15px;
+            border: 2px solid #dceaf1;
+            border-radius: 12px;
+            outline: none;
+            font-size: 14px;
+            transition: .3s;
+        }
+
+        .input-group input:focus {
+            border-color: #42a5d5;
+            box-shadow: 0 0 0 3px rgba(66,165,213,.12);
+        }
+
+        .login-btn {
+            width: 100%;
+            border: none;
+            padding: 14px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #238bc0, #56b8df);
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: .3s;
+            margin-top: 5px;
+        }
+
+        .login-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 18px rgba(35,139,192,.3);
+        }
+
+        .error {
+            color: #d9534f;
+            font-size: 13px;
+            margin-top: 15px;
+            display: none;
+        }
+
+        .back {
+            display: inline-block;
+            margin-top: 22px;
+            color: #238bc0;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .back:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 480px) {
+            .login-card {
+                padding: 32px 23px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="login-container">
+
+    <div class="login-card">
+
+        <div class="logo">🏡</div>
+
+        <h1>Login Admin</h1>
+
+        <p class="subtitle">
+            Desa Pusaka • Panel Administrator
+        </p>
+
+        <form id="loginForm">
+
+            <div class="input-group">
+                <label>Username</label>
+                <input
+                    type="text"
+                    id="username"
+                    placeholder="Masukkan username"
+                    required
+                >
+            </div>
+
+            <div class="input-group">
+                <label>Password</label>
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Masukkan password"
+                    required
+                >
+            </div>
+
+            <button type="submit" class="login-btn">
+                🔐 Masuk sebagai Admin
+            </button>
+
+            <p class="error" id="error">
+                Username atau password salah!
+            </p>
+
+        </form>
+
+        <a href="index.html" class="back">
+            ← Kembali ke Website
+        </a>
+
+    </div>
+
+</div>
+
+<script>
+    document.getElementById("loginForm").addEventListener("submit", function(e) {
+
+        e.preventDefault();
+
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+        const error = document.getElementById("error");
+
+        /*
+         * LOGIN DEMO
+         * Ganti username dan password sesuai kebutuhan.
+         */
+        if (username === "admin" && password === "admin123") {
+
+            localStorage.setItem("adminLogin", "true");
+
+            window.location.href = "admin.html";
+
+        } else {
+
+            error.style.display = "block";
+
+        }
+
+    });
+</script>
+
+</body>
+</html>
