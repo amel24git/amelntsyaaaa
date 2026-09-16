@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -10,6 +12,7 @@
     <link rel="icon" type="image/png" href="gambar/favicon.png">
 
     <style>
+
         * {
             margin: 0;
             padding: 0;
@@ -142,6 +145,10 @@
             font-weight: bold;
         }
 
+        .action:hover {
+            background: #176b9c;
+        }
+
         .footer {
             text-align: center;
             margin-top: 50px;
@@ -150,12 +157,15 @@
         }
 
         @media (max-width: 800px) {
+
             .cards {
                 grid-template-columns: 1fr 1fr;
             }
+
         }
 
         @media (max-width: 550px) {
+
             .navbar {
                 padding: 0 20px;
             }
@@ -175,8 +185,11 @@
             .welcome {
                 padding: 22px;
             }
+
         }
+
     </style>
+
 </head>
 
 <body>
@@ -194,67 +207,116 @@
 
 </header>
 
+
 <main class="container">
 
     <section class="welcome">
+
         <h1>Dashboard Admin 👋</h1>
+
         <p>
             Selamat datang di halaman administrator Desa Pusaka.
         </p>
+
     </section>
+
 
     <section class="cards">
 
+
+        <!-- DATA ADUAN -->
+
         <div class="card">
-            <div class="icon">📢</div>
-            <h3>Data Aduan</h3>
+
+            <div class="icon">
+                📢
+            </div>
+
+            <h3>
+                Data Aduan
+            </h3>
+
             <p>
                 Lihat dan kelola laporan atau aduan dari masyarakat.
             </p>
 
-           <a href="kontak.html#aduanForm" class="action">
-            Kelola Aduan
-        </a>
+            <a href="kontak.html#aduanForm" class="action">
+                Kelola Aduan
+            </a>
+
         </div>
 
+
+        <!-- GALERI DESA -->
+
         <div class="card">
-            <div class="icon">🖼️</div>
-            <h3>Galeri Desa</h3>
+
+            <div class="icon">
+                🖼️
+            </div>
+
+            <h3>
+                Galeri Desa
+            </h3>
+
             <p>
                 Kelola informasi dan dokumentasi kegiatan desa.
             </p>
 
-           <a href="galeri.html" class="action">
-            Lihat Galeri
-        </a>
+            <a href="galeri.html" class="action">
+                Lihat Galeri
+            </a>
+
         </div>
 
-        <div class="card">
-    <div class="icon">🖼️</div>
-    <h3>Galeri Desa</h3>
-    <p>
-        Kelola informasi dan dokumentasi kegiatan desa.
-    </p>
 
-    <a href="galeri.html" class="action">
-        Lihat Galeri
-    </a>
-</div>
+        <!-- WEBSITE -->
+
+        <div class="card">
+
+            <div class="icon">
+                🌐
+            </div>
+
+            <h3>
+                Website
+            </h3>
+
+            <p>
+                Kembali melihat website utama Desa Pusaka.
+            </p>
+
+            <a href="index.html" class="action">
+                Buka Website
+            </a>
+
+        </div>
+
 
     </section>
 
+
     <div class="footer">
+
         © 2026 Desa Pusaka • Admin Panel
+
     </div>
 
 </main>
 
+
 <script>
 
     // Cek apakah sudah login
+
     if (localStorage.getItem("adminLogin") !== "true") {
+
         window.location.href = "admin-login.html";
+
     }
+
+
+    // Fungsi logout
 
     function logout() {
 
