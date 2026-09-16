@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard Admin - Desa Pusaka</title>
+
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" href="gambar/favicon.png">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", Arial, sans-serif;
+        }
+
+        body {
+            background: #eef8fc;
+            color: #234;
+        }
+
+        .navbar {
+            height: 70px;
+            background: linear-gradient(135deg, #176b9c, #42a5d5);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 7%;
+            box-shadow: 0 5px 20px rgba(0,0,0,.12);
+        }
+
+        .logo-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: bold;
+            font-size: 19px;
+        }
+
+        .logo-title span {
+            background: rgba(255,255,255,.2);
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+        }
+
+        .logout {
+            border: 1px solid rgba(255,255,255,.5);
+            background: rgba(255,255,255,.12);
+            color: white;
+            padding: 9px 17px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .logout:hover {
+            background: white;
+            color: #176b9c;
+        }
+
+        .container {
+            width: 86%;
+            max-width: 1150px;
+            margin: 40px auto;
+        }
+
+        .welcome {
+            background: white;
+            padding: 30px;
+            border-radius: 22px;
+            box-shadow: 0 8px 25px rgba(0,0,0,.07);
+            margin-bottom: 25px;
+        }
+
+        .welcome h1 {
+            color: #176b9c;
+            margin-bottom: 8px;
+        }
+
+        .welcome p {
+            color: #71808a;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 8px 25px rgba(0,0,0,.07);
+            transition: .3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 15px;
+            background: #e1f4fc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 25px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            color: #176b9c;
+            margin-bottom: 7px;
+        }
+
+        .card p {
+            color: #78868e;
+            font-size: 14px;
+        }
+
+        .action {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 9px 15px;
+            background: #238bc0;
+            color: white;
+            text-decoration: none;
+            border-radius: 9px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            color: #8798a0;
+            font-size: 13px;
+        }
+
+        @media (max-width: 800px) {
+            .cards {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 550px) {
+            .navbar {
+                padding: 0 20px;
+            }
+
+            .logo-title {
+                font-size: 15px;
+            }
+
+            .container {
+                width: 92%;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .welcome {
+                padding: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <div class="logo-title">
+        <span>🏡</span>
+        Desa Pusaka
+    </div>
+
+    <button class="logout" onclick="logout()">
+        Keluar
+    </button>
+
+</header>
+
+<main class="container">
+
+    <section class="welcome">
+        <h1>Dashboard Admin 👋</h1>
+        <p>
+            Selamat datang di halaman administrator Desa Pusaka.
+        </p>
+    </section>
+
+    <section class="cards">
+
+        <div class="card">
+            <div class="icon">📢</div>
+            <h3>Data Aduan</h3>
+            <p>
+                Lihat dan kelola laporan atau aduan dari masyarakat.
+            </p>
+
+            <a href="#" class="action">
+                Kelola Aduan
+            </a>
+        </div>
+
+        <div class="card">
+            <div class="icon">🖼️</div>
+            <h3>Galeri Desa</h3>
+            <p>
+                Kelola informasi dan dokumentasi kegiatan desa.
+            </p>
+
+            <a href="index.html#galeri" class="action">
+                Lihat Galeri
+            </a>
+        </div>
+
+        <div class="card">
+            <div class="icon">🌐</div>
+            <h3>Website</h3>
+            <p>
+                Kembali melihat website utama Desa Pusaka.
+            </p>
+
+            <a href="index.html" class="action">
+                Buka Website
+            </a>
+        </div>
+
+    </section>
+
+    <div class="footer">
+        © 2026 Desa Pusaka • Admin Panel
+    </div>
+
+</main>
+
+<script>
+
+    // Cek apakah sudah login
+    if (localStorage.getItem("adminLogin") !== "true") {
+        window.location.href = "admin-login.html";
+    }
+
+    function logout() {
+
+        localStorage.removeItem("adminLogin");
+
+        window.location.href = "admin-login.html";
+
+    }
+
+</script>
+
+</body>
+</html>
