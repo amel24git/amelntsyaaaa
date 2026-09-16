@@ -3414,3 +3414,61 @@ section {
     transform: translateY(-2px);
     box-shadow: 0 6px 15px rgba(23, 107, 156, 0.25);
 }
+/* =================================
+   PERAPIAN JARAK HALAMAN KONTAK
+================================= */
+
+/* Jarak antar section dibuat lebih rapat */
+body {
+    overflow-x: hidden;
+}
+
+.section {
+    padding-top: 45px !important;
+    padding-bottom: 45px !important;
+    min-height: auto !important;
+}
+
+/* Bagian kontak / sosial media */
+.contact-section,
+.social-section {
+    margin-bottom: 25px !important;
+}
+
+/* Grid kartu kontak */
+.contact-grid,
+.social-grid {
+    gap: 20px !important;
+    margin-top: 20px !important;
+}
+
+/* Kartu Instagram & TikTok */
+.contact-card,
+.social-card {
+    margin-bottom: 0 !important;
+}
+
+/* Bagian lokasi */
+.location-section {
+    margin-top: 25px !important;
+    padding-top: 40px !important;
+}
+
+/* Judul section */
+.section-heading {
+    margin-bottom: 20px !important;
+}
+
+/* Menghilangkan ruang kosong akibat animasi */
+.reveal {
+    transform: translateY(20px);
+}
+
+.reveal.active {
+    transform: translateY(0);
+}
+
+/* Footer jangan terlalu jauh dari konten */
+.footer {
+    margin-top: 20px !important;
+}
