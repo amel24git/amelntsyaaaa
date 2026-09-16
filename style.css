@@ -947,12 +947,12 @@ section {
    ========================= */
 
 .section {
-    padding: 45px 0;
+    padding: 40px 0;
 }
 
 .section-header {
     max-width: 750px;
-    margin: 0 auto 25px;
+    margin: 0 auto 20px;
 
     text-align: center;
 }
