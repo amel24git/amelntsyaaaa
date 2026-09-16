@@ -1,243 +1,121 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    /* ===============================
-       ANIMASI SCROLL
-    =============================== */
+    /* ==========================================
+       MENU HP
+    ========================================== */
 
-    const reveals = document.querySelectorAll(".reveal");
+    const menuToggle = document.getElementById("menuToggle");
+    const navMenu = document.querySelector(".nav-menu");
 
-    const observer = new IntersectionObserver(
-        function (entries) {
-            entries.forEach(function (entry) {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("active");
-                }
-            });
-        },
-        {
-            threshold: 0.15
-        }
-    );
+    if (menuToggle && navMenu) {
 
-    reveals.forEach(function (element) {
-        observer.observe(element);
-    });
-
-
-    /* ===============================
-       POPUP VIDEO 9:16
-    =============================== */
-
-    const videoCards = document.querySelectorAll(".video-card");
-
-    if (videoCards.length > 0) {
-
-        const lightbox = document.createElement("div");
-
-        lightbox.className = "video-lightbox";
-
-        lightbox.innerHTML = `
-            <div class="video-lightbox-content">
-
-                <button class="video-lightbox-close">
-                    ×
-                </button>
-
-                <video
-                    id="popupVideo"
-                    controls
-                    playsinline
-                    preload="auto"
-                    controlsList="nofullscreen"
-                    disablePictureInPicture>
-                </video>
-
-            </div>
-        `;
-
-        document.body.appendChild(lightbox);
-
-
-        const popupVideo =
-            document.getElementById("popupVideo");
-
-        const closeButton =
-            document.querySelector(".video-lightbox-close");
-
-
-        /* Klik video */
-
-        videoCards.forEach(function (card) {
-
-            const video =
-                card.querySelector("video");
-
-            if (!video) return;
-
-            video.addEventListener("dblclick", function (event) {
-
-                event.preventDefault();
-
-                const source =
-                    video.querySelector("source");
-
-                if (source) {
-                    popupVideo.src = source.src;
-                } else {
-                    popupVideo.src = video.currentSrc;
-                }
-
-                lightbox.classList.add("show");
-
-                document.body.style.overflow = "hidden";
-
-                popupVideo.play().catch(function () {});
-
-            });
-
+        menuToggle.addEventListener("click", function () {
+            navMenu.classList.toggle("show");
         });
 
-
-        /* Tutup */
-
-        closeButton.addEventListener("click", function () {
-
-            popupVideo.pause();
-
-            popupVideo.removeAttribute("src");
-
-            popupVideo.load();
-
-            lightbox.classList.remove("show");
-
-            document.body.style.overflow = "";
-
-        });
+    }
 
 
-        /* Klik luar */
+    /* ==========================================
+       TUTUP MENU SAAT LINK DIPILIH
+    ========================================== */
 
-        lightbox.addEventListener("click", function (event) {
+    const navLinks = document.querySelectorAll(".nav-menu a");
 
-            if (event.target === lightbox) {
+    navLinks.forEach(function (link) {
 
-                popupVideo.pause();
+        link.addEventListener("click", function () {
 
-                popupVideo.removeAttribute("src");
-
-                popupVideo.load();
-
-                lightbox.classList.remove("show");
-
-                document.body.style.overflow = "";
+            if (navMenu) {
+                navMenu.classList.remove("show");
             }
 
         });
 
+    });
 
-        /* Tombol ESC */
 
-        document.addEventListener("keydown", function (event) {
+    /* ==========================================
+       ANIMASI SCROLL
+    ========================================== */
 
-            if (
-                event.key === "Escape" &&
-                lightbox.classList.contains("show")
-            ) {
+    const reveals = document.querySelectorAll(".reveal");
 
-                popupVideo.pause();
+    const observer = new IntersectionObserver(
 
-                popupVideo.removeAttribute("src");
+        function (entries) {
 
-                popupVideo.load();
+            entries.forEach(function (entry) {
 
-                lightbox.classList.remove("show");
+                if (entry.isIntersecting) {
 
-                document.body.style.overflow = "";
+                    entry.target.classList.add("active");
+
+                }
+
+            });
+
+        },
+
+        {
+            threshold: 0.15
+        }
+
+    );
+
+
+    reveals.forEach(function (element) {
+
+        observer.observe(element);
+
+    });
+
+
+    /* ==========================================
+       EFEK GERAKAN MOUSE
+    ========================================== */
+
+    const hero = document.querySelector(".hero");
+
+    if (hero && window.matchMedia("(pointer:fine)").matches) {
+
+        hero.addEventListener("mousemove", function (event) {
+
+            const x =
+                (event.clientX / window.innerWidth - 0.5) * 2;
+
+            const y =
+                (event.clientY / window.innerHeight - 0.5) * 2;
+
+
+            const mountains =
+                document.querySelectorAll(".mountain");
+
+            mountains.forEach(function (mountain, index) {
+
+                const speed = (index + 1) * 3;
+
+                mountain.style.marginLeft =
+                    `${x * speed}px`;
+
+                mountain.style.marginBottom =
+                    `${y * speed}px`;
+
+            });
+
+
+            const sun =
+                document.querySelector(".sun");
+
+            if (sun) {
+
+                sun.style.transform =
+                    `translate(${x * 8}px, ${y * 8}px)`;
+
             }
 
         });
 
     }
 
-
-    /* ===============================
-   FORM ADUAN
-   GOOGLE SHEETS
-=============================== */
-
-const aduanForm = document.getElementById("aduanForm");
-
-if (aduanForm) {
-
-    const SCRIPT_URL =
-        "https://script.google.com/macros/s/AKfycbzgDVCYu_32Z3o5bUEOuWlJMJsNV8ii3ONp-7RtaQUtfZ0EedTNQujXo5jVH91hS0Vr/exec";
-
-    aduanForm.addEventListener("submit", function (event) {
-
-        event.preventDefault();
-
-        const nama =
-            document.getElementById("aduanNama").value.trim();
-
-        const kategori =
-            document.getElementById("aduanKategori").value;
-
-        const judul =
-            document.getElementById("aduanJudul").value.trim();
-
-        const deskripsi =
-            document.getElementById("aduanDeskripsi").value.trim();
-
-        const button =
-            document.getElementById("aduanSubmit");
-
-        if (!nama || !kategori || !judul || !deskripsi) {
-            alert("Mohon lengkapi semua data aduan.");
-            return;
-        }
-
-        button.disabled = true;
-        button.textContent = "MENGIRIM...";
-
-        const data = {
-            nama: nama,
-            kategori: kategori,
-            judul: judul,
-            deskripsi: deskripsi,
-            status: "Menunggu"
-        };
-
-        fetch(SCRIPT_URL, {
-            method: "POST",
-            mode: "no-cors",
-            headers: {
-                "Content-Type": "text/plain;charset=utf-8"
-            },
-            body: JSON.stringify(data)
-        })
-        .then(function () {
-
-            alert("✅ Aduan berhasil dikirim!");
-
-            aduanForm.reset();
-
-        })
-        .catch(function (error) {
-
-            console.error("Error:", error);
-
-            alert(
-                "❌ Aduan gagal dikirim. Silakan coba lagi."
-            );
-
-        })
-        .finally(function () {
-
-            button.disabled = false;
-            button.textContent = "KIRIM ADUAN";
-
-        });
-
-    });
-}
 });
