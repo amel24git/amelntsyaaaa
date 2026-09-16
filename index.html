@@ -6,299 +6,292 @@
 
     <title>Desa Pusaka - Desa Asri dan Harmonis</title>
 
-    <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/jpeg" href="favicon.jpeg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- ================= NAVBAR ================= -->
-<header class="navbar">
-    <div class="nav-container">
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
 
         <a href="index.html" class="logo">
-            <span class="logo-icon">🏡</span>
-            <span>DESA PUSAKA</span>
+            <div class="logo-icon">🏡</div>
+
+            <div>
+                <strong>DESA PUSAKA</strong>
+                <small>Desa Asri & Harmonis</small>
+            </div>
         </a>
 
-        <button class="menu-toggle" id="menuToggle">
-            ☰
-        </button>
-<nav id="navMenu">
-    <a href="index.html" class="active">Beranda</a>
-    <a href="tentang.html">Tentang Desa</a>
-    <a href="galeri.html">Galeri Desa</a>
-    <a href="agustusan.html">Semarak Agustusan</a>
-    <a href="kontak.html">Kontak</a>
-    <a href="admin-login.html" class="admin-btn">🔐 Admin</a>
-</nav>
-      
+        <nav class="nav-menu">
 
-    </div>
-</header>
-
-
-<!-- ================= HERO ================= -->
-<section class="hero">
-
-    <div class="sun"></div>
-
-    <!-- AWAN -->
-    <div class="cloud cloud1"></div>
-    <div class="cloud cloud2"></div>
-    <div class="cloud cloud3"></div>
-    <div class="cloud cloud4"></div>
-    <div class="cloud cloud5"></div>
-
-    <!-- BURUNG -->
-    <div class="birds birds1">⌁⌁</div>
-    <div class="birds birds2">⌁⌁⌁</div>
-    <div class="birds birds3">⌁⌁</div>
-
-    <div class="hero-content">
-
-        <span class="hero-label">
-            🌿 WEBSITE RESMI DESA
-        </span>
-
-        <h1>
-            SELAMAT DATANG<br>
-            DI <span>DESA PUSAKA</span>
-        </h1>
-
-        <h2>
-            DESA ASRI DAN HARMONIS
-        </h2>
-
-        <p>
-            Temukan keindahan alam, keramahan masyarakat,
-            dan semangat kebersamaan Desa Pusaka.
-        </p>
-
-        <div class="hero-buttons">
-            <a href="tentang.html" class="btn btn-primary">
-                JELAJAHI DESA
+            <a href="index.html" class="active">
+                🏠 Beranda
             </a>
 
-            <a href="galeri.html" class="btn btn-light">
-                LIHAT GALERI
+            <a href="tentang.html">
+                🌿 Tentang Desa
             </a>
-        </div>
 
-    </div>
+            <a href="galeri.html">
+                🖼️ Galeri Desa
+            </a>
+
+            <a href="agustusan.html">
+                🎉 Semarak Agustusan
+            </a>
+
+            <a href="kontak.html">
+                💌 Kontak
+            </a>
+
+            <a href="admin.html" class="admin-btn">
+                🔐 Admin
+            </a>
+
+        </nav>
+
+        <button class="menu-toggle" id="menuToggle">☰</button>
+
+    </header>
 
 
-    <!-- ILUSTRASI DESA -->
-    <div class="village-scene">
+    <!-- ================= HERO ================= -->
 
-        <div class="mountain mountain-back"></div>
-        <div class="mountain mountain-front"></div>
+    <main>
 
-        <div class="field field1"></div>
-        <div class="field field2"></div>
+        <section class="hero">
 
-        <!-- POHON -->
-        <div class="tree tree1">
-            <div class="tree-top"></div>
-            <div class="tree-trunk"></div>
-        </div>
-
-        <div class="tree tree2">
-            <div class="tree-top"></div>
-            <div class="tree-trunk"></div>
-        </div>
-
-        <div class="tree tree3">
-            <div class="tree-top"></div>
-            <div class="tree-trunk"></div>
-        </div>
-
-        <!-- RUMAH -->
-        <div class="house house1">
-            <div class="roof"></div>
-            <div class="house-body">
-                <div class="door"></div>
-                <div class="window"></div>
+            <!-- Matahari -->
+            <div class="sun">
+                <div class="sun-core"></div>
             </div>
-        </div>
 
-        <div class="house house2">
-            <div class="roof"></div>
-            <div class="house-body">
-                <div class="door"></div>
-                <div class="window"></div>
+            <!-- Awan bergerak -->
+            <div class="cloud cloud-1">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
-        </div>
 
-        <!-- SEKOLAH -->
-        <div class="school">
-            <div class="school-roof"></div>
-            <div class="school-body">
-                <span>🏫</span>
+            <div class="cloud cloud-2">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
-        </div>
 
-        <!-- KANTOR DESA -->
-        <div class="village-office">
-            <div class="office-roof"></div>
-            <div class="office-body">
-                <span>KANTOR<br>DESA</span>
+            <div class="cloud cloud-3">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
-        </div>
-
-        <!-- JALAN -->
-        <div class="village-road"></div>
-
-    </div>
-
-</section>
 
 
-<!-- ================= FITUR ================= -->
-<section class="section features-section">
+            <!-- Burung -->
+            <div class="bird bird-1">⌁</div>
+            <div class="bird bird-2">⌁</div>
+            <div class="bird bird-3">⌁</div>
 
-    <div class="section-heading reveal">
-        <span>KEINDAHAN DESA PUSAKA</span>
-        <h2>Hidup Harmonis Bersama Alam</h2>
+
+            <!-- Isi hero -->
+
+            <div class="hero-content">
+
+                <div class="welcome">
+                    🌱 Website Resmi Desa
+                </div>
+
+                <h1>
+                    SELAMAT DATANG
+                    <span>di</span>
+                    DESA PUSAKA
+                </h1>
+
+                <div class="hero-badge">
+                    🌿 DESA ASRI DAN HARMONIS 🌿
+                </div>
+
+                <p>
+                    Temukan keindahan alam, keramahan masyarakat,
+                    dan semangat kebersamaan Desa Pusaka.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="tentang.html" class="btn btn-primary">
+                        🗺️ Jelajahi Desa
+                    </a>
+
+                    <a href="galeri.html" class="btn btn-secondary">
+                        📸 Lihat Galeri
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= PEMANDANGAN ================= -->
+
+            <div class="landscape">
+
+                <!-- Gunung -->
+                <div class="mountain mountain-back"></div>
+                <div class="mountain mountain-back second"></div>
+
+                <div class="mountain mountain-front"></div>
+                <div class="mountain mountain-front second"></div>
+
+
+                <!-- Rumah kiri -->
+                <div class="house house-left">
+
+                    <div class="roof"></div>
+
+                    <div class="house-body">
+                        <div class="window"></div>
+                        <div class="door"></div>
+                    </div>
+
+                    <div class="house-plant plant-1">🌿</div>
+                    <div class="house-plant plant-2">🌿</div>
+
+                </div>
+
+
+                <!-- Rumah kanan -->
+                <div class="house house-right">
+
+                    <div class="roof"></div>
+
+                    <div class="house-body">
+                        <div class="window"></div>
+                        <div class="door"></div>
+                    </div>
+
+                </div>
+
+
+                <!-- Pohon -->
+                <div class="tree tree-1">
+                    <div class="tree-top"></div>
+                    <div class="tree-trunk"></div>
+                </div>
+
+                <div class="tree tree-2">
+                    <div class="tree-top"></div>
+                    <div class="tree-trunk"></div>
+                </div>
+
+
+                <!-- Sawah -->
+                <div class="field field-1"></div>
+                <div class="field field-2"></div>
+
+
+                <!-- Sungai -->
+                <div class="river">
+
+                    <div class="water-line line-1"></div>
+                    <div class="water-line line-2"></div>
+                    <div class="water-line line-3"></div>
+
+                </div>
+
+
+                <!-- Jembatan -->
+                <div class="bridge">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+
+
+                <!-- Perahu -->
+                <div class="boat">
+                    <div class="boat-top"></div>
+                    <div class="boat-body"></div>
+                </div>
+
+
+                <!-- Kucing -->
+                <div class="cute-cat">
+                    <div class="cat-ear left"></div>
+                    <div class="cat-ear right"></div>
+                    <div class="cat-face">
+                        <span class="eye left-eye"></span>
+                        <span class="eye right-eye"></span>
+                        <span class="cat-nose">♥</span>
+                    </div>
+                    <div class="cat-body"></div>
+                    <div class="cat-tail"></div>
+                </div>
+
+
+                <!-- Bunga -->
+                <div class="flowers flower-1">🌷</div>
+                <div class="flowers flower-2">🌼</div>
+                <div class="flowers flower-3">🌷</div>
+
+            </div>
+
+
+            <!-- Daun terbang -->
+
+            <div class="leaf leaf-1">🍃</div>
+            <div class="leaf leaf-2">🍃</div>
+            <div class="leaf leaf-3">🍂</div>
+            <div class="leaf leaf-4">🍃</div>
+
+        </section>
+
+
+        <!-- ================= INTRO ================= -->
+
+        <section class="intro">
+
+            <div class="intro-card reveal">
+
+                <div class="intro-icon">🌳</div>
+
+                <div>
+                    <h2>Selamat Datang di Desa Pusaka</h2>
+
+                    <p>
+                        Desa yang penuh dengan keindahan alam,
+                        kebersamaan masyarakat, serta suasana yang
+                        nyaman dan harmonis.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
         <p>
-            Desa Pusaka menghadirkan suasana kehidupan pedesaan
-            yang asri, ramah, dan penuh kebersamaan.
-        </p>
-    </div>
-
-
-    <div class="feature-grid">
-
-        <article class="feature-card reveal">
-
-            <div class="feature-icon">🌳</div>
-
-            <h3>ALAM YANG ASRI</h3>
-
-            <p>
-                Lingkungan desa yang hijau, sejuk,
-                dan nyaman untuk kehidupan masyarakat.
-            </p>
-
-        </article>
-
-
-        <article class="feature-card reveal">
-
-            <div class="feature-icon">🤝</div>
-
-            <h3>GOTONG ROYONG</h3>
-
-            <p>
-                Kebersamaan masyarakat menjadi kekuatan
-                utama Desa Pusaka.
-            </p>
-
-        </article>
-
-
-        <article class="feature-card reveal">
-
-            <div class="feature-icon">💙</div>
-
-            <h3>DESA MODERN</h3>
-
-            <p>
-                Tradisi dan kehidupan desa berkembang
-                bersama teknologi modern.
-            </p>
-
-        </article>
-
-    </div>
-
-</section>
-
-
-<!-- ================= PREVIEW GALERI ================= -->
-<section class="section blue-section">
-
-    <div class="section-heading reveal">
-
-        <span>GALERI</span>
-
-        <h2>Pesona Desa Pusaka</h2>
-
-        <p>
-            Nikmati beberapa gambaran keindahan alam
-            dan kehidupan masyarakat Desa Pusaka.
+            © 2026 Desa Pusaka • Desa Asri dan Harmonis 💙
         </p>
 
-    </div>
+    </footer>
 
 
-    <div class="preview-gallery">
-
-        <img src="kampung.jpg.jpeg"
-             alt="Kampung Desa Pusaka"
-             class="reveal">
-
-        <img src="desa1.jpg.jpeg"
-             alt="Pemandangan Desa"
-             class="reveal">
-
-        <img src="desa2.jpg.jpeg"
-             alt="Suasana Desa"
-             class="reveal">
-
-    </div>
-
-
-    <div class="center-button">
-        <a href="galeri.html" class="btn btn-primary">
-            LIHAT SEMUA GALERI
-        </a>
-    </div>
-
-</section>
-
-
-<!-- ================= FOOTER ================= -->
-<footer class="footer">
-
-    <div class="footer-content">
-
-        <div>
-            <h3>🏡 DESA PUSAKA</h3>
-
-            <p>
-                Desa Asri dan Harmonis.
-            </p>
-        </div>
-
-        <div>
-            <h4>Navigasi</h4>
-
-            <a href="index.html">Beranda</a>
-            <a href="tentang.html">Tentang Desa</a>
-            <a href="galeri.html">Galeri</a>
-            <a href="agustusan.html">Agustusan</a>
-            <a href="kontak.html">Kontak</a>
-        </div>
-
-        <div>
-            <h4>Kontak</h4>
-
-            <p>📍 Kecamatan Tebas</p>
-            <p>📍 Kabupaten Sambas</p>
-            <p>📱 083852501005</p>
-        </div>
-
-    </div>
-
-    <div class="copyright">
-        © 2026 Desa Pusaka. Semua Hak Dilindungi.
-    </div>
-
-</footer>
-
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
 </html>
