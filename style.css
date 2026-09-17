@@ -3414,3 +3414,61 @@ section {
     transform: translateY(-2px);
     box-shadow: 0 6px 15px rgba(23, 107, 156, 0.25);
 }
+/* =====================================================
+   INFORMASI DESA TANPA GAMBAR
+   ===================================================== */
+
+.feature-grid-no-image {
+    display: block;
+    width: 100%;
+}
+
+.feature-grid-no-image .feature-content {
+    width: 100%;
+    max-width: 100%;
+}
+
+.feature-grid-no-image .info-grid {
+    margin-top: 25px;
+}
+
+.feature-grid-no-image .btn {
+    margin-top: 5px;
+}
+
+
+/* Desktop */
+
+@media (min-width: 761px) {
+
+    .feature-grid-no-image {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .feature-grid-no-image .feature-content {
+        text-align: center;
+    }
+
+    .feature-grid-no-image .feature-content > p {
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .feature-grid-no-image .info-grid {
+        text-align: left;
+    }
+
+}
+
+
+/* HP */
+
+@media (max-width: 760px) {
+
+    .feature-grid-no-image {
+        width: 100%;
+    }
+
+}
