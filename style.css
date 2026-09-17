@@ -1,7 +1,6 @@
 /* =====================================================
    DASAR
-===================================================== */
-
+   ===================================================== */
 * {
     margin: 0;
     padding: 0;
@@ -23,35 +22,25 @@ a {
     text-decoration: none;
 }
 
-
 /* =====================================================
    NAVBAR
-===================================================== */
-
+   ===================================================== */
 .navbar {
     position: absolute;
     top: 22px;
     left: 3%;
     right: 3%;
     z-index: 100;
-
     min-height: 86px;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     padding: 12px 18px 12px 24px;
-
     background: rgba(255, 255, 255, 0.88);
     backdrop-filter: blur(15px);
-
-    border: 2px solid rgba(255,255,255,.9);
+    border: 2px solid rgba(255, 255, 255, .9);
     border-radius: 30px;
-
-    box-shadow:
-        0 15px 40px rgba(18, 112, 164, .18);
-
+    box-shadow: 0 15px 40px rgba(18, 112, 164, .18);
     animation: navbarDown .8s ease;
 }
 
@@ -65,24 +54,12 @@ a {
 .logo-icon {
     width: 55px;
     height: 55px;
-
     display: grid;
     place-items: center;
-
     font-size: 29px;
-
     border-radius: 18px;
-
-    background: linear-gradient(
-        145deg,
-        #64cdf4,
-        #178bc5
-    );
-
-    box-shadow:
-        inset 0 2px 5px rgba(255,255,255,.8),
-        0 8px 18px rgba(0,130,190,.25);
-
+    background: linear-gradient(145deg, #64cdf4, #178bc5);
+    box-shadow: inset 0 2px 5px rgba(255, 255, 255, .8), 0 8px 18px rgba(0, 130, 190, .25);
     transition: .3s;
 }
 
@@ -112,12 +89,9 @@ a {
 
 .nav-menu a {
     padding: 13px 18px;
-
     border-radius: 17px;
-
     color: #07558a;
     font-weight: 600;
-
     transition: .3s;
 }
 
@@ -128,132 +102,74 @@ a {
 
 .nav-menu a.active {
     color: white;
-    background: linear-gradient(
-        135deg,
-        #158cca,
-        #086ca5
-    );
-
-    box-shadow:
-        0 7px 18px rgba(11, 117, 173, .3);
+    background: linear-gradient(135deg, #158cca, #086ca5);
+    box-shadow: 0 7px 18px rgba(11, 117, 173, .3);
 }
 
 .nav-menu .admin-btn {
     color: white;
-
-    background: linear-gradient(
-        135deg,
-        #4db9e8,
-        #178ac3
-    );
+    background: linear-gradient(135deg, #4db9e8, #178ac3);
 }
 
 .menu-toggle {
     display: none;
-
     border: none;
     background: #168bc7;
     color: white;
-
     width: 45px;
     height: 45px;
-
     border-radius: 14px;
-
     font-size: 22px;
 }
 
-
 /* =====================================================
-   HERO
-===================================================== */
-
+   HERO & ELEMEN ALAM
+   ===================================================== */
 .hero {
     position: relative;
     min-height: 850px;
-
     overflow: hidden;
-
-    background:
-        linear-gradient(
-            180deg,
-            #45b8ed 0%,
-            #8edaf5 43%,
-            #d9f7ff 70%,
-            #f3fdff 100%
-        );
-
+    background: linear-gradient(180deg, #45b8ed 0%, #8edaf5 43%, #d9f7ff 70%, #f3fdff 100%);
     isolation: isolate;
 }
 
-
-/* =====================================================
-   MATAHARI
-===================================================== */
-
 .sun {
     position: absolute;
-
     width: 130px;
     height: 130px;
-
     right: 10%;
     top: 160px;
-
     border-radius: 50%;
-
     background: rgba(255, 237, 124, .45);
-
     filter: blur(1px);
-
     animation: sunPulse 4s ease-in-out infinite;
 }
 
 .sun-core {
     position: absolute;
-
     width: 75px;
     height: 75px;
-
     left: 27px;
     top: 27px;
-
     border-radius: 50%;
-
     background: #ffe77d;
-
-    box-shadow:
-        0 0 25px #fff1a8,
-        0 0 55px #fff1a8,
-        0 0 90px rgba(255,240,150,.6);
+    box-shadow: 0 0 25px #fff1a8, 0 0 55px #fff1a8, 0 0 90px rgba(255, 240, 150, .6);
 }
-
-
-/* =====================================================
-   AWAN
-===================================================== */
 
 .cloud {
     position: absolute;
-
     display: flex;
     align-items: flex-end;
-
     width: 180px;
     height: 70px;
-
     opacity: .88;
-
     animation: cloudMove 30s linear infinite;
 }
 
 .cloud span {
     position: relative;
-
     display: block;
-
     background: white;
-
     border-radius: 50%;
 }
 
@@ -274,175 +190,96 @@ a {
     margin-left: -15px;
 }
 
-.cloud-1 {
-    top: 185px;
-    left: -220px;
-}
-
-.cloud-2 {
-    top: 310px;
-    left: -260px;
-    transform: scale(.7);
-    animation-duration: 38s;
-}
-
-.cloud-3 {
-    top: 110px;
-    left: -300px;
-    transform: scale(.5);
-    animation-duration: 45s;
-}
-
-
-/* =====================================================
-   BURUNG
-===================================================== */
+.cloud-1 { top: 185px; left: -220px; }
+.cloud-2 { top: 310px; left: -260px; transform: scale(.7); animation-duration: 38s; }
+.cloud-3 { top: 110px; left: -300px; transform: scale(.5); animation-duration: 45s; }
 
 .bird {
     position: absolute;
-
     z-index: 4;
-
     font-size: 45px;
     font-weight: bold;
-
     color: #276c8e;
-
     transform: rotate(-15deg);
-
     animation: birdFly 18s linear infinite;
 }
 
-.bird-1 {
-    top: 245px;
-    left: -100px;
-}
-
-.bird-2 {
-    top: 335px;
-    left: -250px;
-    font-size: 32px;
-    animation-delay: 5s;
-}
-
-.bird-3 {
-    top: 180px;
-    left: -350px;
-    font-size: 27px;
-    animation-delay: 9s;
-}
-
+.bird-1 { top: 245px; left: -100px; }
+.bird-2 { top: 335px; left: -250px; font-size: 32px; animation-delay: 5s; }
+.bird-3 { top: 180px; left: -350px; font-size: 27px; animation-delay: 9s; }
 
 /* =====================================================
    HERO CONTENT
-===================================================== */
-
+   ===================================================== */
 .hero-content {
     position: relative;
-
     z-index: 20;
-
     width: min(900px, 90%);
-
     margin: auto;
-
     padding-top: 245px;
-
     text-align: center;
-
     animation: heroAppear 1.2s ease;
 }
 
 .welcome {
     display: inline-block;
-
     margin-bottom: 12px;
-
     font-size: 18px;
     color: white;
-
     animation: floating 3s ease-in-out infinite;
 }
 
 .hero h1 {
     font-family: "Baloo 2", sans-serif;
-
     font-size: clamp(50px, 7vw, 92px);
-
     line-height: .82;
-
     font-weight: 800;
-
     color: white;
-
-    text-shadow:
-        0 5px 0 rgba(7, 91, 137, .12),
-        0 12px 25px rgba(7, 91, 137, .18);
+    text-shadow: 0 5px 0 rgba(7, 91, 137, .12), 0 12px 25px rgba(7, 91, 137, .18);
 }
 
 .hero h1 span {
     display: block;
-
     margin: 8px 0;
-
     font-size: .5em;
-
     font-weight: 600;
 }
 
 .hero-badge {
     display: inline-block;
-
     margin-top: 22px;
     padding: 10px 25px;
-
     border-radius: 30px;
-
     color: #08659b;
-
-    background: rgba(255,255,255,.75);
-
-    border: 2px solid rgba(255,255,255,.9);
-
-    box-shadow: 0 8px 25px rgba(23,129,178,.13);
-
+    background: rgba(255, 255, 255, .75);
+    border: 2px solid rgba(255, 255, 255, .9);
+    box-shadow: 0 8px 25px rgba(23, 129, 178, .13);
     font-weight: 700;
 }
 
 .hero-content p {
     max-width: 650px;
-
     margin: 15px auto;
-
     color: white;
-
     font-size: 16px;
-
-    text-shadow: 0 2px 8px rgba(0,80,120,.15);
+    text-shadow: 0 2px 8px rgba(0, 80, 120, .15);
 }
 
-
 /* =====================================================
-   BUTTON
-===================================================== */
-
+   TOMBOL
+   ===================================================== */
 .hero-buttons {
     display: flex;
     justify-content: center;
     gap: 15px;
-
     margin-top: 20px;
 }
 
 .btn {
     min-width: 190px;
-
     padding: 15px 24px;
-
     border-radius: 30px;
-
     font-weight: 800;
-
     transition: .3s;
 }
 
@@ -452,102 +289,58 @@ a {
 
 .btn-primary {
     color: white;
-
-    background: linear-gradient(
-        135deg,
-        #1496d2,
-        #05689f
-    );
-
-    box-shadow:
-        0 12px 25px rgba(0,105,160,.25);
+    background: linear-gradient(135deg, #1496d2, #05689f);
+    box-shadow: 0 12px 25px rgba(0, 105, 160, .25);
 }
 
 .btn-secondary {
     color: #076394;
-
     background: white;
-
     border: 2px solid #168bc7;
 }
 
-
 /* =====================================================
-   LANDSCAPE
-===================================================== */
-
+   LANDSCAPE, GUNUNG, RUMAH, & POHON
+   ===================================================== */
 .landscape {
     position: absolute;
-
     left: 0;
     right: 0;
     bottom: 0;
-
     height: 440px;
-
     z-index: 3;
 }
 
-
-/* =====================================================
-   GUNUNG
-===================================================== */
-
 .mountain {
     position: absolute;
-
     bottom: 200px;
-
     width: 0;
     height: 0;
-
     border-left: 300px solid transparent;
     border-right: 300px solid transparent;
     border-bottom: 330px solid #8fcfdc;
-
     opacity: .8;
 }
 
-.mountain-back {
-    left: -100px;
-}
-
-.mountain-back.second {
-    left: 400px;
-    transform: scale(.85);
-    opacity: .65;
-}
+.mountain-back { left: -100px; }
+.mountain-back.second { left: 400px; transform: scale(.85); opacity: .65; }
 
 .mountain-front {
     bottom: 140px;
     left: 45%;
-
     border-left-width: 340px;
     border-right-width: 340px;
     border-bottom-width: 300px;
-
     border-bottom-color: #5aa991;
 }
 
-.mountain-front.second {
-    left: 70%;
-    transform: scale(.7);
-}
-
-
-/* =====================================================
-   RUMAH
-===================================================== */
+.mountain-front.second { left: 70%; transform: scale(.7); }
 
 .house {
     position: absolute;
-
     bottom: 190px;
-
     z-index: 8;
-
     transition: .3s;
-
     animation: houseFloat 4s ease-in-out infinite;
 }
 
@@ -555,272 +348,133 @@ a {
     transform: translateY(-8px) scale(1.04);
 }
 
-.house-left {
-    left: 8%;
-}
-
-.house-right {
-    right: 10%;
-    transform: scale(.8);
-    animation-delay: 1s;
-}
+.house-left { left: 8%; }
+.house-right { right: 10%; transform: scale(.8); animation-delay: 1s; }
 
 .roof {
     width: 190px;
     height: 90px;
-
-    background: linear-gradient(
-        145deg,
-        #5d9fc2,
-        #31789e
-    );
-
-    clip-path: polygon(
-        0 100%,
-        50% 0,
-        100% 100%
-    );
-
+    background: linear-gradient(145deg, #5d9fc2, #31789e);
+    clip-path: polygon(0 100%, 50% 0, 100% 100%);
     border-radius: 15px 15px 0 0;
 }
 
 .house-body {
     position: relative;
-
     width: 160px;
     height: 125px;
-
     margin: -1px auto 0;
-
     background: #fff4df;
-
     border-radius: 5px;
-
-    box-shadow:
-        0 10px 20px rgba(55,90,80,.15);
+    box-shadow: 0 10px 20px rgba(55, 90, 80, .15);
 }
 
 .window {
     position: absolute;
-
     left: 20px;
     top: 32px;
-
     width: 38px;
     height: 38px;
-
     border-radius: 8px;
-
     background: #8fdcf5;
-
     border: 5px solid white;
 }
 
 .door {
     position: absolute;
-
     right: 22px;
     bottom: 0;
-
     width: 42px;
     height: 73px;
-
     background: #a96f4e;
-
     border-radius: 7px 7px 0 0;
 }
 
 .house-plant {
     position: absolute;
     bottom: 0;
-
     font-size: 45px;
 }
 
-.plant-1 {
-    left: -35px;
-}
-
-.plant-2 {
-    right: -35px;
-}
-
-
-/* =====================================================
-   POHON
-===================================================== */
+.plant-1 { left: -35px; }
+.plant-2 { right: -35px; }
 
 .tree {
     position: absolute;
-
     bottom: 185px;
-
     z-index: 9;
-
     animation: treeSway 4s ease-in-out infinite;
 }
 
-.tree-1 {
-    left: 3%;
-}
-
-.tree-2 {
-    right: 3%;
-    transform: scale(.75);
-    animation-delay: 1s;
-}
+.tree-1 { left: 3%; }
+.tree-2 { right: 3%; transform: scale(.75); animation-delay: 1s; }
 
 .tree-top {
     width: 115px;
     height: 115px;
-
     border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle at 30% 30%,
-            #91d66e,
-            #45a85d 60%,
-            #31844d
-        );
-
-    box-shadow:
-        25px 15px 0 #55b765,
-        -20px 20px 0 #62bb6a;
+    background: radial-gradient(circle at 30% 30%, #91d66e, #45a85d 60%, #31844d);
+    box-shadow: 25px 15px 0 #55b765, -20px 20px 0 #62bb6a;
 }
 
 .tree-trunk {
     width: 25px;
     height: 90px;
-
     margin: -8px auto 0;
-
     background: #8a6142;
-
     border-radius: 0 0 10px 10px;
 }
 
-
 /* =====================================================
-   SAWAH
-===================================================== */
-
+   SAWAH, SUNGAI, JEMBATAN, & PERAHU
+   ===================================================== */
 .field {
     position: absolute;
-
     bottom: 80px;
-
     width: 55%;
-
     height: 180px;
-
-    background:
-        repeating-linear-gradient(
-            12deg,
-            #82c965 0,
-            #82c965 12px,
-            #71b85a 13px,
-            #71b85a 18px
-        );
-
+    background: repeating-linear-gradient(12deg, #82c965 0, #82c965 12px, #71b85a 13px, #71b85a 18px);
     border-radius: 50% 50% 0 0;
 }
 
-.field-1 {
-    left: -10%;
-    transform: rotate(5deg);
-}
-
-.field-2 {
-    right: -10%;
-    transform: rotate(-5deg);
-}
-
-
-/* =====================================================
-   SUNGAI
-===================================================== */
+.field-1 { left: -10%; transform: rotate(5deg); }
+.field-2 { right: -10%; transform: rotate(-5deg); }
 
 .river {
     position: absolute;
-
     z-index: 6;
-
     bottom: 0;
     left: 15%;
     right: 15%;
-
     height: 170px;
-
-    background:
-        linear-gradient(
-            180deg,
-            #75d7ed,
-            #55bfdc
-        );
-
+    background: linear-gradient(180deg, #75d7ed, #55bfdc);
     border-radius: 50% 50% 0 0;
-
     overflow: hidden;
-
-    box-shadow:
-        inset 0 10px 20px rgba(255,255,255,.25);
+    box-shadow: inset 0 10px 20px rgba(255, 255, 255, .25);
 }
 
 .water-line {
     position: absolute;
-
     height: 4px;
-
     border-radius: 20px;
-
-    background: rgba(255,255,255,.55);
-
+    background: rgba(255, 255, 255, .55);
     animation: waterMove 4s linear infinite;
 }
 
-.line-1 {
-    width: 120px;
-    top: 50px;
-    left: 10%;
-}
-
-.line-2 {
-    width: 180px;
-    top: 90px;
-    right: 10%;
-    animation-delay: 1s;
-}
-
-.line-3 {
-    width: 90px;
-    top: 125px;
-    left: 35%;
-    animation-delay: 2s;
-}
-
-
-/* =====================================================
-   JEMBATAN
-===================================================== */
+.line-1 { width: 120px; top: 50px; left: 10%; }
+.line-2 { width: 180px; top: 90px; right: 10%; animation-delay: 1s; }
+.line-3 { width: 90px; top: 125px; left: 35%; animation-delay: 2s; }
 
 .bridge {
     position: absolute;
-
     z-index: 12;
-
     bottom: 80px;
     left: 38%;
-
     width: 240px;
     height: 22px;
-
     background: #9c704c;
-
     border-radius: 10px;
-
     transform: rotate(-5deg);
-
     display: flex;
     justify-content: space-around;
 }
@@ -828,132 +482,85 @@ a {
 .bridge div {
     width: 8px;
     height: 55px;
-
     margin-top: -5px;
-
     background: #825638;
-
     border-radius: 5px;
 }
 
-
-/* =====================================================
-   PERAHU
-===================================================== */
-
 .boat {
     position: absolute;
-
     z-index: 14;
-
     bottom: 65px;
     right: 27%;
-
     animation: boatMove 5s ease-in-out infinite;
 }
 
 .boat-body {
     width: 85px;
     height: 25px;
-
     background: #8a5639;
-
     border-radius: 5px 5px 35px 35px;
 }
 
 .boat-top {
     width: 4px;
     height: 70px;
-
     margin-left: 42px;
-
     background: #765039;
-
     transform: rotate(-3deg);
 }
 
-
 /* =====================================================
-   KUCING LUCU
-===================================================== */
-
+   KUCING, BUNGA, & DAUN TERBANG
+   ===================================================== */
 .cute-cat {
     position: absolute;
-
     z-index: 20;
-
     right: 21%;
     bottom: 115px;
-
     width: 65px;
     height: 90px;
-
     animation: catBounce 2.5s ease-in-out infinite;
 }
 
 .cat-face {
     position: relative;
-
     width: 60px;
     height: 55px;
-
     background: #f3b879;
-
     border-radius: 45% 45% 48% 48%;
-
     border: 3px solid #d38d52;
 }
 
 .cat-ear {
     position: absolute;
-
     width: 25px;
     height: 25px;
-
     background: #e9a867;
-
     transform: rotate(45deg);
-
     top: -7px;
-
     z-index: -1;
 }
 
-.cat-ear.left {
-    left: 4px;
-}
-
-.cat-ear.right {
-    right: 4px;
-}
+.cat-ear.left { left: 4px; }
+.cat-ear.right { right: 4px; }
 
 .eye {
     position: absolute;
-
     top: 22px;
-
     width: 7px;
     height: 9px;
-
     background: #4a3b35;
-
     border-radius: 50%;
 }
 
-.left-eye {
-    left: 17px;
-}
-
-.right-eye {
-    right: 17px;
-}
+.left-eye { left: 17px; }
+.right-eye { right: 17px; }
 
 .cat-nose {
     position: absolute;
-
     top: 31px;
     left: 25px;
-
     font-size: 9px;
     color: #e67878;
 }
@@ -961,152 +568,80 @@ a {
 .cat-body {
     width: 42px;
     height: 42px;
-
     margin: -2px auto 0;
-
     background: #efa967;
-
     border-radius: 50% 50% 20% 20%;
 }
 
 .cat-tail {
     position: absolute;
-
     width: 45px;
     height: 45px;
-
     right: -20px;
     bottom: 0;
-
     border: 8px solid #dfa05e;
     border-left: none;
-
     border-radius: 0 45px 45px 0;
-
     animation: tailMove 1.8s ease-in-out infinite;
 }
 
-
-/* =====================================================
-   BUNGA
-===================================================== */
-
 .flowers {
     position: absolute;
-
     z-index: 15;
-
     font-size: 30px;
-
     animation: flowerMove 3s ease-in-out infinite;
 }
 
-.flower-1 {
-    left: 18%;
-    bottom: 130px;
-}
-
-.flower-2 {
-    left: 27%;
-    bottom: 105px;
-    animation-delay: 1s;
-}
-
-.flower-3 {
-    right: 15%;
-    bottom: 130px;
-    animation-delay: 2s;
-}
-
-
-/* =====================================================
-   DAUN TERBANG
-===================================================== */
+.flower-1 { left: 18%; bottom: 130px; }
+.flower-2 { left: 27%; bottom: 105px; animation-delay: 1s; }
+.flower-3 { right: 15%; bottom: 130px; animation-delay: 2s; }
 
 .leaf {
     position: absolute;
-
     z-index: 30;
-
     font-size: 28px;
-
     animation: leafFly 12s linear infinite;
 }
 
-.leaf-1 {
-    left: 5%;
-    top: 55%;
-}
-
-.leaf-2 {
-    left: 40%;
-    top: 65%;
-    animation-delay: 3s;
-}
-
-.leaf-3 {
-    left: 65%;
-    top: 55%;
-    animation-delay: 6s;
-}
-
-.leaf-4 {
-    left: 80%;
-    top: 70%;
-    animation-delay: 8s;
-}
-
+.leaf-1 { left: 5%; top: 55%; }
+.leaf-2 { left: 40%; top: 65%; animation-delay: 3s; }
+.leaf-3 { left: 65%; top: 55%; animation-delay: 6s; }
+.leaf-4 { left: 80%; top: 70%; animation-delay: 8s; }
 
 /* =====================================================
-   INTRO
-===================================================== */
-
+   INTRO & FOOTER
+   ===================================================== */
 .intro {
     padding: 70px 7%;
-
     background: #f3fcff;
 }
 
 .intro-card {
     max-width: 1000px;
-
     margin: auto;
-
     display: flex;
     align-items: center;
     gap: 25px;
-
     padding: 35px;
-
     border-radius: 30px;
-
     background: white;
-
-    box-shadow:
-        0 15px 40px rgba(17,104,145,.1);
+    box-shadow: 0 15px 40px rgba(17, 104, 145, .1);
 }
 
 .intro-icon {
     width: 80px;
     height: 80px;
-
     flex-shrink: 0;
-
     display: grid;
     place-items: center;
-
     font-size: 40px;
-
     background: #dff6ff;
-
     border-radius: 25px;
 }
 
 .intro h2 {
     font-family: "Baloo 2", sans-serif;
-
     font-size: 30px;
-
     margin-bottom: 5px;
 }
 
@@ -1114,405 +649,214 @@ a {
     color: #6b8ea2;
 }
 
-
-/* =====================================================
-   FOOTER
-===================================================== */
-
 footer {
     padding: 25px;
-
     text-align: center;
-
     color: #6091a9;
-
     background: #e1f6ff;
 }
 
-
 /* =====================================================
    REVEAL
-===================================================== */
-
+   ===================================================== */
 .reveal {
     opacity: 0;
-
     transform: translateY(40px);
-
     transition: 1s ease;
 }
 
 .reveal.active {
     opacity: 1;
-
     transform: translateY(0);
 }
 
-
 /* =====================================================
    ANIMATIONS
-===================================================== */
-
+   ===================================================== */
 @keyframes navbarDown {
-    from {
-        opacity: 0;
-        transform: translateY(-40px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(-40px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes heroAppear {
-    from {
-        opacity: 0;
-        transform: translateY(35px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(35px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes floating {
-    0%, 100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-7px);
-    }
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-7px); }
 }
 
 @keyframes cloudMove {
-    from {
-        transform: translateX(0);
-    }
-
-    to {
-        transform: translateX(125vw);
-    }
+    from { transform: translateX(0); }
+    to { transform: translateX(125vw); }
 }
 
 @keyframes birdFly {
-    0% {
-        transform: translateX(0) translateY(0) rotate(-15deg);
-    }
-
-    25% {
-        transform: translateX(30vw) translateY(-30px) rotate(-5deg);
-    }
-
-    50% {
-        transform: translateX(60vw) translateY(15px) rotate(-15deg);
-    }
-
-    75% {
-        transform: translateX(90vw) translateY(-25px) rotate(-5deg);
-    }
-
-    100% {
-        transform: translateX(120vw) translateY(0) rotate(-15deg);
-    }
+    0% { transform: translateX(0) translateY(0) rotate(-15deg); }
+    25% { transform: translateX(30vw) translateY(-30px) rotate(-5deg); }
+    50% { transform: translateX(60vw) translateY(15px) rotate(-15deg); }
+    75% { transform: translateX(90vw) translateY(-25px) rotate(-5deg); }
+    100% { transform: translateX(120vw) translateY(0) rotate(-15deg); }
 }
 
 @keyframes sunPulse {
-    0%, 100% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.08);
-    }
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.08); }
 }
 
 @keyframes houseFloat {
-    0%, 100% {
-        margin-bottom: 0;
-    }
-
-    50% {
-        margin-bottom: 5px;
-    }
+    0%, 100% { margin-bottom: 0; }
+    50% { margin-bottom: 5px; }
 }
 
 @keyframes treeSway {
-    0%, 100% {
-        transform: rotate(0);
-    }
-
-    50% {
-        transform: rotate(2deg);
-    }
+    0%, 100% { transform: rotate(0); }
+    50% { transform: rotate(2deg); }
 }
 
 @keyframes waterMove {
-    0% {
-        transform: translateX(-80px);
-        opacity: .2;
-    }
-
-    50% {
-        opacity: 1;
-    }
-
-    100% {
-        transform: translateX(250px);
-        opacity: .2;
-    }
+    0% { transform: translateX(-80px); opacity: .2; }
+    50% { opacity: 1; }
+    100% { transform: translateX(250px); opacity: .2; }
 }
 
 @keyframes boatMove {
-    0%, 100% {
-        transform: translate(0, 0) rotate(-2deg);
-    }
-
-    50% {
-        transform: translate(18px, -5px) rotate(2deg);
-    }
+    0%, 100% { transform: translate(0, 0) rotate(-2deg); }
+    50% { transform: translate(18px, -5px) rotate(2deg); }
 }
 
 @keyframes catBounce {
-    0%, 100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-8px);
-    }
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
 }
 
 @keyframes tailMove {
-    0%, 100% {
-        transform: rotate(0);
-    }
-
-    50% {
-        transform: rotate(15deg);
-    }
+    0%, 100% { transform: rotate(0); }
+    50% { transform: rotate(15deg); }
 }
 
 @keyframes flowerMove {
-    0%, 100% {
-        transform: rotate(-3deg);
-    }
-
-    50% {
-        transform: rotate(5deg) translateY(-4px);
-    }
+    0%, 100% { transform: rotate(-3deg); }
+    50% { transform: rotate(5deg) translateY(-4px); }
 }
 
 @keyframes leafFly {
-    0% {
-        transform: translate(0, 0) rotate(0);
-        opacity: 0;
-    }
-
-    15% {
-        opacity: 1;
-    }
-
-    50% {
-        transform: translate(80px, -50px) rotate(180deg);
-    }
-
-    100% {
-        transform: translate(180px, 40px) rotate(360deg);
-        opacity: 0;
-    }
+    0% { transform: translate(0, 0) rotate(0); opacity: 0; }
+    15% { opacity: 1; }
+    50% { transform: translate(80px, -50px) rotate(180deg); }
+    100% { transform: translate(180px, 40px) rotate(360deg); opacity: 0; }
 }
 
-
 /* =====================================================
-   TABLET
-===================================================== */
-
+   RESPONSIVE (TABLET & HP)
+   ===================================================== */
 @media (max-width: 1100px) {
-
     .nav-menu a {
         padding: 11px 12px;
         font-size: 13px;
     }
-
     .navbar {
         left: 2%;
         right: 2%;
     }
-
     .hero-content {
         padding-top: 240px;
     }
-
-    .house-left {
-        left: 2%;
-    }
-
-    .house-right {
-        right: 2%;
-    }
+    .house-left { left: 2%; }
+    .house-right { right: 2%; }
 }
 
-
-/* =====================================================
-   HP
-===================================================== */
-
 @media (max-width: 760px) {
-
     .navbar {
         top: 12px;
-
         min-height: 70px;
-
         border-radius: 22px;
-
         padding: 8px 10px 8px 14px;
     }
-
     .logo-icon {
         width: 45px;
         height: 45px;
         font-size: 23px;
     }
-
     .logo strong {
         font-size: 17px;
     }
-
     .logo small {
         display: none;
     }
-
     .menu-toggle {
         display: block;
     }
-
     .nav-menu {
         position: absolute;
-
         top: 78px;
         left: 0;
         right: 0;
-
         display: none;
         flex-direction: column;
-
         padding: 12px;
-
         background: white;
-
         border-radius: 20px;
-
-        box-shadow: 0 15px 35px rgba(0,80,120,.18);
+        box-shadow: 0 15px 35px rgba(0, 80, 120, .18);
     }
-
     .nav-menu.show {
         display: flex;
     }
-
     .nav-menu a {
         width: 100%;
         text-align: center;
     }
-
     .hero {
         min-height: 760px;
     }
-
     .hero-content {
         padding-top: 170px;
     }
-
     .hero h1 {
         font-size: 52px;
     }
-
     .hero-content p {
         font-size: 13px;
         padding: 0 15px;
     }
-
     .hero-badge {
         font-size: 12px;
         padding: 9px 14px;
     }
-
     .hero-buttons {
         flex-direction: column;
-
         align-items: center;
     }
-
     .btn {
         width: 210px;
     }
-
     .sun {
         width: 90px;
         height: 90px;
         top: 130px;
         right: 5%;
     }
-
     .sun-core {
         width: 55px;
         height: 55px;
         left: 18px;
         top: 18px;
     }
-
     .house {
         transform: scale(.6);
         transform-origin: bottom;
     }
-
-    .house-left {
-        left: -20px;
-        bottom: 170px;
-    }
-
-    .house-right {
-        right: -30px;
-        bottom: 170px;
-    }
-
-    .tree-1 {
-        left: -25px;
-        transform: scale(.6);
-    }
-
-    .tree-2 {
-        right: -25px;
-        transform: scale(.5);
-    }
-
-    .river {
-        left: -5%;
-        right: -5%;
-    }
-
-    .bridge {
-        left: 25%;
-        transform: scale(.7) rotate(-5deg);
-    }
-
-    .cute-cat {
-        right: 12%;
-        transform: scale(.75);
-    }
-
-    .mountain {
-        transform: scale(.65);
-        transform-origin: bottom;
-    }
-
-    .intro {
-        padding: 45px 5%;
-    }
-
+    .house-left { left: -20px; bottom: 170px; }
+    .house-right { right: -30px; bottom: 170px; }
+    .tree-1 { left: -25px; transform: scale(.6); }
+    .tree-2 { right: -25px; transform: scale(.5); }
+    .river { left: -5%; right: -5%; }
+    .bridge { left: 25%; transform: scale(.7) rotate(-5deg); }
+    .cute-cat { right: 12%; transform: scale(.75); }
+    .mountain { transform: scale(.65); transform-origin: bottom; }
+    .intro { padding: 45px 5%; }
     .intro-card {
         flex-direction: column;
         text-align: center;
@@ -1520,9 +864,7 @@ footer {
     }
 }
 
-
 @media (prefers-reduced-motion: reduce) {
-
     *,
     *::before,
     *::after {
