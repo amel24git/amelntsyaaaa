@@ -1700,3 +1700,60 @@ footer {
     }
 }
 ```
+```css
+/* ==========================================
+   MENU HP TERBUKA
+========================================== */
+
+@media (max-width: 850px) {
+
+    .nav-menu.show {
+        display: flex;
+
+        position: absolute;
+
+        top: 70px;
+        left: 0;
+
+        width: 100%;
+
+        padding: 15px;
+
+        flex-direction: column;
+
+        background: rgba(255, 255, 255, 0.95);
+
+        backdrop-filter: blur(15px);
+
+        border-radius: 20px;
+
+        box-shadow:
+            0 15px 30px rgba(60, 130, 160, .15);
+
+        animation:
+            menuDown .3s ease;
+    }
+
+    .nav-menu.show a {
+        width: 100%;
+
+        text-align: center;
+
+        padding: 12px;
+    }
+}
+
+@keyframes menuDown {
+
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+```
