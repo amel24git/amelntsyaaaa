@@ -23,19 +23,20 @@ a {
 }
 
 /* =====================================================
-   NAVBAR
+   NAVBAR (SUDAH DIPERBAIKI)
    ===================================================== */
 .navbar {
-    position: absolute;
-    top: 22px;
+    position: sticky; /* Diubah dari absolute ke sticky agar tidak melayang menutupi konten */
+    top: 20px;
     left: 3%;
     right: 3%;
-    z-index: 100;
+    z-index: 1000;
     min-height: 86px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 12px 18px 12px 24px;
+    margin-bottom: 30px; /* Memberi jarak bawah ke konten */
     background: rgba(255, 255, 255, 0.88);
     backdrop-filter: blur(15px);
     border: 2px solid rgba(255, 255, 255, 0.9);
@@ -306,6 +307,7 @@ a {
 }
 
 .btn {
+    display: inline-block;
     min-width: 190px;
     padding: 15px 24px;
     border-radius: 30px;
@@ -732,8 +734,16 @@ a {
 }
 
 /* =====================================================
-   INTRO & FOOTER
+   INTRO, KONTEN PEMBUNGKUS & FOOTER
    ===================================================== */
+main, .page-content, .container {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+}
+
 .intro {
     padding: 70px 7%;
     background: #f3fcff;
