@@ -1,6 +1,23 @@
 /* =====================================================
-   DASAR & RESET (WARNA LEBIH LEMBUT / TIDAK SAKIT MATA)
+   TEMA "DESA HIDUP" - ASRI, DINAMIS, & NYAMAN DI MATA
    ===================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+/* Reset & Variablen Warna Alam */
+:root {
+    --bg-main: #f3f8f6;
+    --card-bg: rgba(255, 255, 255, 0.85);
+    --primary-blue: #2a75a0;
+    --accent-green: #3d9970;
+    --text-dark: #2c3e50;
+    --text-muted: #607274;
+    --shadow-soft: 0 10px 30px rgba(42, 117, 160, 0.08);
+    --shadow-hover: 0 18px 40px rgba(42, 117, 160, 0.15);
+    --radius-lg: 24px;
+    --radius-md: 16px;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -12,493 +29,253 @@ html {
 }
 
 body {
-    font-family: "Poppins", sans-serif;
-    color: #335c6e; /* Warna teks lebih soft */
-    background: #f0f7fb; /* Background umum lebih kalem */
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: var(--bg-main);
+    color: var(--text-dark);
+    line-height: 1.6;
     overflow-x: hidden;
 }
 
 a {
     text-decoration: none;
+    color: inherit;
 }
 
 /* =====================================================
-   NAVBAR 
+   NAVBAR (STICKY & BLUR EFFECT)
    ===================================================== */
-.navbar {
+header, .navbar {
     position: sticky;
     top: 15px;
-    left: 3%;
-    right: 3%;
     z-index: 1000;
-    min-height: 75px;
+    width: min(1100px, 92%);
+    margin: 0 auto 30px auto;
+    padding: 12px 24px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 20px;
-    margin-bottom: 40px; /* Jarak bawah lebih longgar */
-    background: rgba(255, 255, 255, 0.92);
+    background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(12px);
-    border: 1px solid rgba(200, 225, 240, 0.8);
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(20, 90, 130, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+    transition: all 0.3s ease;
 }
 
-.logo {
+header a, .logo {
     display: flex;
     align-items: center;
     gap: 12px;
-    color: #2b6cb0;
-}
-
-.logo-icon {
-    width: 45px;
-    height: 45px;
-    display: grid;
-    place-items: center;
-    font-size: 22px;
-    border-radius: 14px;
-    background: linear-gradient(145deg, #70bbf2, #3182ce);
-    box-shadow: 0 4px 12px rgba(49, 130, 206, 0.2);
 }
 
 .logo strong {
-    font-family: "Baloo 2", sans-serif;
+    font-family: 'Baloo 2', cursive;
     font-size: 20px;
-    font-weight: 700;
+    color: var(--primary-blue);
 }
 
 .logo small {
-    font-size: 11px;
-    color: #718096;
-}
-
-.nav-menu {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.nav-menu a {
-    padding: 10px 16px;
-    border-radius: 12px;
-    color: #4a5568;
-    font-size: 14px;
-    font-weight: 500;
-    transition: 0.3s;
-}
-
-.nav-menu a:hover {
-    background: #e2e8f0;
-    color: #2b6cb0;
-}
-
-.nav-menu a.active {
-    color: #ffffff;
-    background: #3182ce;
-    box-shadow: 0 4px 12px rgba(49, 130, 206, 0.3);
-}
-
-.menu-toggle {
-    display: none;
-    border: none;
-    background: #3182ce;
-    color: #ffffff;
-    width: 40px;
-    height: 40px;
-    border-radius: 10px;
-    font-size: 20px;
-}
-
-/* =====================================================
-   HERO & ELEMEN ALAM (WARNA TIDAK TERLALU SILAU)
-   ===================================================== */
-.hero {
-    position: relative;
-    min-height: 680px; /* Dikurangi agar tidak terlalu memanjang */
-    overflow: hidden;
-    /* Gradasi dibuat lebih kalem (soft blue-to-soft cyan) */
-    background: linear-gradient(180deg, #63b3ed 0%, #bee3f8 50%, #edf2f7 100%);
-    isolation: isolate;
-}
-
-.sun {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    right: 12%;
-    top: 100px;
-    border-radius: 50%;
-    background: rgba(254, 240, 138, 0.6);
-    filter: blur(2px);
-}
-
-.sun-core {
-    position: absolute;
-    width: 60px;
-    height: 60px;
-    left: 20px;
-    top: 20px;
-    border-radius: 50%;
-    background: #fef08a;
-    box-shadow: 0 0 20px rgba(254, 240, 138, 0.8);
-}
-
-.cloud {
-    position: absolute;
-    display: flex;
-    align-items: flex-end;
-    width: 150px;
-    height: 60px;
-    opacity: 0.8;
-    animation: cloudMove 35s linear infinite;
-}
-
-.cloud span {
-    position: relative;
     display: block;
-    background: #ffffff;
-    border-radius: 50%;
+    font-size: 11px;
+    color: var(--text-muted);
 }
 
-.cloud span:nth-child(1) { width: 50px; height: 45px; }
-.cloud span:nth-child(2) { width: 75px; height: 65px; margin-left: -12px; }
-.cloud span:nth-child(3) { width: 50px; height: 45px; margin-left: -12px; }
-
-.cloud-1 { top: 130px; left: -200px; }
-.cloud-2 { top: 220px; left: -250px; transform: scale(0.6); }
-.cloud-3 { top: 80px; left: -300px; transform: scale(0.4); }
-
-.bird {
-    position: absolute;
-    z-index: 4;
-    font-size: 30px;
-    color: #4a5568;
-    animation: birdFly 20s linear infinite;
+nav, .nav-menu {
+    display: flex;
+    gap: 8px;
 }
-.bird-1 { top: 180px; left: -100px; }
-.bird-2 { top: 250px; left: -220px; font-size: 24px; animation-delay: 6s; }
+
+nav a, .nav-menu a {
+    padding: 8px 16px;
+    border-radius: var(--radius-md);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-dark);
+    transition: all 0.3s ease;
+}
+
+nav a:hover, .nav-menu a:hover {
+    background: rgba(61, 153, 112, 0.1);
+    color: var(--accent-green);
+    transform: translateY(-2px);
+}
 
 /* =====================================================
-   HERO CONTENT
+   HERO SECTION (EFEK HIDUP & BERNAFAS)
    ===================================================== */
-.hero-content {
+.hero, section:first-of-type {
     position: relative;
-    z-index: 20;
-    width: min(800px, 88%);
-    margin: auto;
-    padding-top: 140px; /* Jarak atas diperkecil agar pas di layar */
+    padding: 60px 20px 100px 20px;
     text-align: center;
+    background: linear-gradient(180deg, #d8f3dc 0%, #b7e4c7 40%, var(--bg-main) 100%);
+    border-radius: 0 0 40px 40px;
+    overflow: hidden;
 }
 
-.welcome {
-    display: inline-block;
-    margin-bottom: 8px;
-    font-size: 15px;
-    color: #2b6cb0;
-    font-weight: 600;
+/* Efek Cahaya Hidup di Background */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0) 70%);
+    border-radius: 50%;
+    animation: pulseGlow 8s infinite alternate ease-in-out;
+    pointer-events: none;
 }
 
 .hero h1 {
-    font-family: "Baloo 2", sans-serif;
-    font-size: clamp(36px, 5vw, 60px); /* Ukuran font dikecilkan agar tidak terlalu besar */
-    line-height: 1.1;
-    font-weight: 800;
-    color: #1a365d;
-    text-shadow: 0 2px 10px rgba(255, 255, 255, 0.6);
+    font-family: 'Baloo 2', cursive;
+    font-size: clamp(32px, 5vw, 52px);
+    color: #1b4332;
+    margin-bottom: 15px;
+    line-height: 1.2;
 }
 
-.hero h1 span {
-    display: block;
-    margin: 4px 0;
-    font-size: 0.5em;
-    font-weight: 600;
-    color: #2b6cb0;
+.hero p {
+    max-width: 600px;
+    margin: 0 auto 25px auto;
+    font-size: 16px;
+    color: #2d6a4f;
 }
 
-.hero-badge {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 6px 18px;
-    border-radius: 20px;
-    color: #2b6cb0;
-    background: rgba(255, 255, 255, 0.85);
-    border: 1px solid #cbd5e0;
-    font-size: 13px;
-    font-weight: 600;
-}
-
-.hero-content p {
-    max-width: 550px;
-    margin: 12px auto;
-    color: #4a5568;
-    font-size: 14px;
-    line-height: 1.5;
-}
-
-/* =====================================================
-   TOMBOL
-   ===================================================== */
-.hero-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    margin-top: 20px;
-}
-
-.btn {
-    display: inline-block;
-    min-width: 150px;
-    padding: 12px 20px;
-    border-radius: 25px;
-    font-size: 14px;
+/* Tombol Interaktif */
+.hero a, .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 28px;
+    margin: 5px;
+    border-radius: 30px;
     font-weight: 700;
-    transition: 0.3s;
+    font-size: 14px;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
-.btn:hover {
-    transform: translateY(-3px);
-}
-
-.btn-primary {
+.hero a:first-of-type, .btn-primary {
+    background: var(--accent-green);
     color: #ffffff;
-    background: #3182ce;
-    box-shadow: 0 6px 15px rgba(49, 130, 206, 0.25);
 }
 
-.btn-secondary {
-    color: #2b6cb0;
-    background: #ffffff;
-    border: 2px solid #3182ce;
-}
-
-/* =====================================================
-   LANDSCAPE (UKURAN DIPERKECIL AGAR TIDAK SESAK)
-   ===================================================== */
-.landscape {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 320px;
-    z-index: 3;
-    transform: scale(0.85); /* Memperkecil keseluruhan lanskap agar proporsional */
-    transform-origin: bottom;
-}
-
-.mountain {
-    position: absolute;
-    bottom: 150px;
-    width: 0;
-    height: 0;
-    border-left: 250px solid transparent;
-    border-right: 250px solid transparent;
-    border-bottom: 260px solid #90cdf4;
-    opacity: 0.7;
-}
-
-.mountain-back { left: -50px; }
-.mountain-back.second { left: 350px; transform: scale(0.8); opacity: 0.5; }
-
-.mountain-front {
-    bottom: 100px;
-    left: 45%;
-    border-left-width: 280px;
-    border-right-width: 280px;
-    border-bottom-width: 230px;
-    border-bottom-color: #68d391;
-}
-
-.house {
-    position: absolute;
-    bottom: 140px;
-    z-index: 8;
-    transform: scale(0.75); /* Rumah dikecilkan agar tidak mendominasi layar */
-}
-
-.house-left { left: 10%; }
-.house-right { right: 12%; }
-
-.roof {
-    width: 150px;
-    height: 70px;
-    background: linear-gradient(145deg, #4a5568, #2d3748);
-    clip-path: polygon(0 100%, 50% 0, 100% 100%);
-    border-radius: 10px 10px 0 0;
-}
-
-.house-body {
-    width: 130px;
-    height: 100px;
-    margin: -1px auto 0;
-    background: #fffaf0;
-    border-radius: 4px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-}
-
-.window {
-    position: absolute;
-    left: 15px;
-    top: 25px;
-    width: 30px;
-    height: 30px;
-    border-radius: 6px;
-    background: #bee3f8;
-    border: 3px solid #ffffff;
-}
-
-.door {
-    position: absolute;
-    right: 18px;
-    bottom: 0;
-    width: 35px;
-    height: 60px;
-    background: #975a16;
-    border-radius: 5px 5px 0 0;
-}
-
-.tree {
-    position: absolute;
-    bottom: 130px;
-    z-index: 9;
-    transform: scale(0.75);
-}
-
-.tree-1 { left: 4%; }
-.tree-2 { right: 4%; }
-
-.tree-top {
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    background: radial-gradient(circle at 30% 30%, #68d391, #38a169 70%);
-}
-
-.tree-trunk {
-    width: 20px;
-    height: 70px;
-    margin: -6px auto 0;
-    background: #713f12;
+.hero a:first-of-type:hover, .btn-primary:hover {
+    background: #2d6a4f;
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 8px 20px rgba(45, 106, 79, 0.3);
 }
 
 /* =====================================================
-   SUNGAI & ELEMEN BAWAH
+   KONTEN & GALERI FOTO (JARAK LONGGAR & TIDAK DEMPET)
    ===================================================== */
-.field {
-    position: absolute;
-    bottom: 50px;
-    width: 50%;
-    height: 130px;
-    background: repeating-linear-gradient(12deg, #68d391 0, #68d391 10px, #48bb78 11px, #48bb78 15px);
-    border-radius: 50% 50% 0 0;
-}
-
-.field-1 { left: -5%; }
-.field-2 { right: -5%; }
-
-.river {
-    position: absolute;
-    z-index: 6;
-    bottom: 0;
-    left: 20%;
-    right: 20%;
-    height: 120px;
-    background: linear-gradient(180deg, #63b3ed, #3182ce);
-    border-radius: 50% 50% 0 0;
-}
-
-.bridge {
-    position: absolute;
-    z-index: 12;
-    bottom: 50px;
-    left: 40%;
-    width: 180px;
-    height: 16px;
-    background: #7b341e;
-    border-radius: 6px;
-    transform: rotate(-3deg);
-}
-
-/* =====================================================
-   INTRO & KONTEN BAWAH (JARAK LEBIH LONGGAR)
-   ===================================================== */
-main, .page-content, .container {
-    max-width: 900px;
-    margin: 40px auto;
+main, .container {
+    max-width: 1100px;
+    margin: -40px auto 60px auto;
     padding: 0 20px;
     position: relative;
-    z-index: 1;
+    z-index: 10;
 }
 
-.intro {
-    padding: 50px 5%;
-    background: #f7fafc;
-}
-
-.intro-card {
-    max-width: 850px;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    padding: 25px 30px;
-    border-radius: 20px;
-    background: #ffffff;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
-}
-
-.intro-icon {
-    width: 60px;
-    height: 60px;
-    flex-shrink: 0;
+/* Penataan Kartu Konten & Galeri */
+.grid, .gallery-grid, section {
     display: grid;
-    place-items: center;
-    font-size: 28px;
-    background: #e2e8f0;
-    border-radius: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px; /* Memberi jarak aman agar foto/konten tidak berdempetan */
+    margin-top: 30px;
 }
 
-.intro h2 {
-    font-family: "Baloo 2", sans-serif;
-    font-size: 22px;
-    margin-bottom: 4px;
-    color: #1a365d;
-}
-
-.intro p {
-    color: #4a5568;
-    font-size: 14px;
-    line-height: 1.5;
-}
-
-footer {
+/* Kartu Hidup (Hover Effect) */
+.card, .gallery-item, article, section > div {
+    background: var(--card-bg);
+    border-radius: var(--radius-md);
     padding: 20px;
-    text-align: center;
-    color: #718096;
-    background: #edf2f7;
-    font-size: 13px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: var(--shadow-soft);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    backdrop-filter: blur(5px);
+}
+
+.card:hover, .gallery-item:hover, article:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+    border-color: rgba(61, 153, 112, 0.3);
+}
+
+/* Pengaturan Foto Agar Ukurannya Pas & Tidak Sakit Mata */
+img {
+    max-width: 100%;
+    height: auto;
+    max-height: 250px; /* Mencegah foto terlalu besar menutupi layar */
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+    margin-bottom: 12px;
+    transition: transform 0.5s ease;
+}
+
+.card:hover img, .gallery-item:hover img {
+    transform: scale(1.03); /* Efek zoom halus saat disentuh */
 }
 
 /* =====================================================
-   RESPONSIVE HP
+   FOOTER
    ===================================================== */
-@media (max-width: 760px) {
-    .hero { min-height: 580px; }
-    .hero-content { padding-top: 100px; }
-    .hero h1 { font-size: 32px; }
-    .landscape { transform: scale(0.7); }
-    .nav-menu {
-        position: absolute;
-        top: 65px;
-        left: 0;
-        right: 0;
-        display: none;
-        flex-direction: column;
-        padding: 10px;
-        background: #ffffff;
-        border-radius: 15px;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    background: #e9f5ed;
+    color: var(--text-muted);
+    font-size: 13px;
+    border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+/* =====================================================
+   ANIMASI HIDUP (MICRO-INTERACTIONS)
+   ===================================================== */
+@keyframes pulseGlow {
+    0% { transform: translateX(-50%) scale(0.9); opacity: 0.5; }
+    100% { transform: translateX(-50%) scale(1.1); opacity: 0.9; }
+}
+
+/* Animasi Elemen Masuk */
+.hero, .card, main {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
     }
-    .nav-menu.show { display: flex; }
-    .menu-toggle { display: block; }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =====================================================
+   RESPONSIVE (HP & TABLET)
+   ===================================================== */
+@media (max-width: 768px) {
+    header, .navbar {
+        flex-direction: column;
+        gap: 12px;
+        padding: 15px;
+    }
+    
+    nav, .nav-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .grid, .gallery-grid {
+        grid-template-columns: 1fr; /* 1 kolom di HP agar lega */
+        gap: 20px;
+    }
 }
