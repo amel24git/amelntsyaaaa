@@ -1,332 +1,39 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Dashboard Admin - Desa Pusaka</title>
-
-    <!-- FAVICON -->
-    <link rel="icon" type="image/png" href="gambar/favicon.png">
-
-    <style>
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Poppins", Arial, sans-serif;
-        }
-
-        body {
-            background: #eef8fc;
-            color: #234;
-        }
-
-        .navbar {
-            height: 70px;
-            background: linear-gradient(135deg, #176b9c, #42a5d5);
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 7%;
-            box-shadow: 0 5px 20px rgba(0,0,0,.12);
-        }
-
-        .logo-title {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-weight: bold;
-            font-size: 19px;
-        }
-
-        .logo-title span {
-            background: rgba(255,255,255,.2);
-            width: 42px;
-            height: 42px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 22px;
-        }
-
-        .logout {
-            border: 1px solid rgba(255,255,255,.5);
-            background: rgba(255,255,255,.12);
-            color: white;
-            padding: 9px 17px;
-            border-radius: 10px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-
-        .logout:hover {
-            background: white;
-            color: #176b9c;
-        }
-
-        .container {
-            width: 86%;
-            max-width: 1150px;
-            margin: 40px auto;
-        }
-
-        .welcome {
-            background: white;
-            padding: 30px;
-            border-radius: 22px;
-            box-shadow: 0 8px 25px rgba(0,0,0,.07);
-            margin-bottom: 25px;
-        }
-
-        .welcome h1 {
-            color: #176b9c;
-            margin-bottom: 8px;
-        }
-
-        .welcome p {
-            color: #71808a;
-        }
-
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-
-        .card {
-            background: white;
-            border-radius: 20px;
-            padding: 25px;
-            box-shadow: 0 8px 25px rgba(0,0,0,.07);
-            transition: .3s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-        }
-
-        .icon {
-            width: 50px;
-            height: 50px;
-            border-radius: 15px;
-            background: #e1f4fc;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 25px;
-            margin-bottom: 15px;
-        }
-
-        .card h3 {
-            color: #176b9c;
-            margin-bottom: 7px;
-        }
-
-        .card p {
-            color: #78868e;
-            font-size: 14px;
-        }
-
-        .action {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 9px 15px;
-            background: #238bc0;
-            color: white;
-            text-decoration: none;
-            border-radius: 9px;
-            font-size: 13px;
-            font-weight: bold;
-        }
-
-        .action:hover {
-            background: #176b9c;
-        }
-
-        .footer {
-            text-align: center;
-            margin-top: 50px;
-            color: #8798a0;
-            font-size: 13px;
-        }
-
-        @media (max-width: 800px) {
-
-            .cards {
-                grid-template-columns: 1fr 1fr;
-            }
-
-        }
-
-        @media (max-width: 550px) {
-
-            .navbar {
-                padding: 0 20px;
-            }
-
-            .logo-title {
-                font-size: 15px;
-            }
-
-            .container {
-                width: 92%;
-            }
-
-            .cards {
-                grid-template-columns: 1fr;
-            }
-
-            .welcome {
-                padding: 22px;
-            }
-
-        }
-
-    </style>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Aduan - Desa Pusaka</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.admin-page{background:#eef8fc;min-height:100vh}.admin-wrap{width:90%;max-width:1200px;margin:35px auto}.admin-top{display:flex;justify-content:space-between;align-items:center;gap:15px;background:white;padding:25px 28px;border-radius:22px;box-shadow:0 8px 25px rgba(0,0,0,.07);margin-bottom:22px}.admin-top h1{color:#176b9c;margin:0 0 5px}.admin-top p{color:#71808a;margin:0}.admin-actions{display:flex;gap:10px;flex-wrap:wrap}.admin-btn{border:0;text-decoration:none;padding:11px 17px;border-radius:12px;font-weight:700;cursor:pointer}.home-btn{background:#e5f6ff;color:#176b9c}.logout-btn{background:#176b9c;color:white}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:22px}.stat{background:white;border-radius:20px;padding:22px;box-shadow:0 7px 22px rgba(0,0,0,.06)}.stat b{font-size:30px;color:#176b9c;display:block}.stat span{color:#71808a}.aduan-panel{background:white;border-radius:22px;padding:25px;box-shadow:0 8px 25px rgba(0,0,0,.07)}.panel-head{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:20px;flex-wrap:wrap}.panel-head h2{color:#176b9c;margin:0}.refresh{background:#e7f6fd;color:#176b9c}.aduan-list{display:grid;gap:16px}.aduan-item{border:1px solid #dcecf3;border-radius:18px;padding:20px;background:#fbfeff}.aduan-meta{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:10px}.token{font-weight:800;color:#176b9c;letter-spacing:1px}.status{padding:6px 11px;border-radius:999px;background:#e7f6fd;color:#176b9c;font-size:12px;font-weight:800}.aduan-item h3{margin:7px 0;color:#234}.muted{color:#71808a;font-size:13px}.desc{color:#4e6068;line-height:1.65;margin:12px 0}.reply-box{margin-top:15px;padding-top:15px;border-top:1px solid #e1eef3}.reply-box textarea{width:100%;min-height:100px;padding:12px;border:1px solid #d5e6ed;border-radius:12px;resize:vertical;font-family:inherit;outline:none}.reply-row{display:flex;gap:10px;margin-top:10px;flex-wrap:wrap}.reply-row select{padding:10px;border:1px solid #d5e6ed;border-radius:10px}.save-reply{background:#238bc0;color:white}.empty,.loading{padding:30px;text-align:center;color:#71808a;background:#f6fbfd;border-radius:15px}.error-box{padding:18px;text-align:center;color:#a94442;background:#fff2f2;border-radius:15px}@media(max-width:800px){.stats{grid-template-columns:1fr}.admin-top{align-items:flex-start;flex-direction:column}}@media(max-width:550px){.admin-wrap{width:94%}.admin-top,.aduan-panel{padding:20px}.reply-row select,.reply-row button{width:100%}}
+</style>
 </head>
-
-<body>
-
-<header class="navbar">
-
-    <div class="logo-title">
-        <span>🏡</span>
-        Desa Pusaka
-    </div>
-
-    <button class="logout" onclick="logout()">
-        Keluar
-    </button>
-
-</header>
-
-
-<main class="container">
-
-    <section class="welcome">
-
-        <h1>Dashboard Admin 👋</h1>
-
-        <p>
-            Selamat datang di halaman administrator Desa Pusaka.
-        </p>
-
-    </section>
-
-
-    <section class="cards">
-
-
-        <!-- DATA ADUAN -->
-
-        <div class="card">
-
-            <div class="icon">
-                📢
-            </div>
-
-            <h3>
-                Data Aduan
-            </h3>
-
-            <p>
-                Lihat dan kelola laporan atau aduan dari masyarakat.
-            </p>
-
-            <a href="kontak.html#aduanForm" class="action">
-                Kelola Aduan
-            </a>
-
-        </div>
-
-
-        <!-- GALERI DESA -->
-
-        <div class="card">
-
-            <div class="icon">
-                🖼️
-            </div>
-
-            <h3>
-                Galeri Desa
-            </h3>
-
-            <p>
-                Kelola informasi dan dokumentasi kegiatan desa.
-            </p>
-
-           <a href="https://amel24git.github.io/amelntsyaaaa/galeri.html" class="action">
-    Lihat Galeri
-</a>
-
-        </div>
-
-
-        <!-- WEBSITE -->
-
-        <div class="card">
-
-            <div class="icon">
-                🌐
-            </div>
-
-            <h3>
-                Website
-            </h3>
-
-            <p>
-                Kembali melihat website utama Desa Pusaka.
-            </p>
-
-            <a href="index.html" class="action">
-                Buka Website
-            </a>
-
-        </div>
-
-
-    </section>
-
-
-    <div class="footer">
-
-        © 2026 Desa Pusaka • Admin Panel
-
-    </div>
-
+<body class="admin-page">
+<header class="navbar"><div class="nav-container"><a href="index.html" class="logo"><span class="logo-icon">🏡</span><span>DESA PUSAKA • ADMIN</span></a></div></header>
+<main class="admin-wrap">
+<section class="admin-top"><div><h1>Dashboard Aduan 📢</h1><p>Kelola aduan masyarakat dan berikan balasan.</p></div><div class="admin-actions"><a class="admin-btn home-btn" href="index.html">🏠 Kembali ke Beranda</a><button class="admin-btn logout-btn" onclick="logout()">🚪 Logout</button></div></section>
+<section class="stats"><div class="stat"><b id="totalCount">0</b><span>Total Aduan</span></div><div class="stat"><b id="waitingCount">0</b><span>Menunggu</span></div><div class="stat"><b id="repliedCount">0</b><span>Sudah Dibalas</span></div></section>
+<section class="aduan-panel"><div class="panel-head"><h2>Daftar Aduan Masyarakat</h2><button class="admin-btn refresh" onclick="loadAduan()">🔄 Muat Ulang</button></div><div id="aduanList" class="aduan-list"><div class="loading">🔎 Mengambil data aduan...</div></div></section>
 </main>
-
-
 <script>
-
-    // Cek apakah sudah login
-
-    if (localStorage.getItem("adminLogin") !== "true") {
-
-        window.location.href = "admin-login.html";
-
-    }
-
-
-    // Fungsi logout
-
-    function logout() {
-
-        localStorage.removeItem("adminLogin");
-
-        window.location.href = "admin-login.html";
-
-    }
-
+if(localStorage.getItem('adminLogin')!=='true'){window.location.href='admin-login.html';}
+const SCRIPT_URL='https://script.google.com/macros/s/AKfycbzgDVCYu_32Z3o5bUEOuWlJMJsNV8ii3ONp-7RtaQUtfZ0EedTNQujXo5jVH91hS0Vr/exec';
+function escapeHTML(v){return String(v??'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#039;').replace(/\n/g,'<br>')}
+function logout(){localStorage.removeItem('adminLogin');window.location.href='index.html';}
+function loadAduan(){
+ const list=document.getElementById('aduanList');list.innerHTML='<div class="loading">🔎 Mengambil data aduan...</div>';
+ fetch(SCRIPT_URL+'?action=list').then(r=>r.json()).then(res=>{
+  if(!res.success) throw new Error(res.error||'Gagal mengambil data');
+  const data=res.data||[];document.getElementById('totalCount').textContent=data.length;
+  document.getElementById('waitingCount').textContent=data.filter(x=>!['Dibalas','Selesai'].includes(x.status)).length;
+  document.getElementById('repliedCount').textContent=data.filter(x=>x.balasan||x.status==='Dibalas'||x.status==='Selesai').length;
+  if(!data.length){list.innerHTML='<div class="empty">📭 Belum ada aduan masyarakat.</div>';return;}
+  list.innerHTML=data.map((d,i)=>`<article class="aduan-item"><div class="aduan-meta"><span class="token">🔑 ${escapeHTML(d.token)}</span><span class="status">${escapeHTML(d.status||'Menunggu')}</span></div><div class="muted">👤 ${escapeHTML(d.nama)} • ${escapeHTML(d.kategori)} • ${escapeHTML(d.waktu?new Date(d.waktu).toLocaleString('id-ID'):'')}</div><h3>${escapeHTML(d.judul)}</h3><p class="desc">${escapeHTML(d.deskripsi)}</p><div class="reply-box"><b>💬 Balasan Admin</b><textarea id="reply-${i}" placeholder="Tulis balasan untuk masyarakat...">${escapeHTML(d.balasan)}</textarea><div class="reply-row"><select id="status-${i}"><option ${d.status==='Menunggu'?'selected':''}>Menunggu</option><option ${d.status==='Diproses'?'selected':''}>Diproses</option><option ${d.status==='Dibalas'?'selected':''}>Dibalas</option><option ${d.status==='Selesai'?'selected':''}>Selesai</option></select><button class="admin-btn save-reply" onclick="saveReply('${escapeHTML(d.token)}',${i},this)">💬 Simpan Balasan</button></div></div></article>`).join('');
+ }).catch(err=>{console.error(err);list.innerHTML='<div class="error-box">⚠️ Gagal mengambil data aduan. Pastikan Apps Script sudah diperbarui dan di-deploy ulang.</div>';});
+}
+function saveReply(token,i,button){const balasan=document.getElementById('reply-'+i).value.trim(),status=document.getElementById('status-'+i).value;if(!balasan){alert('Silakan tulis balasan terlebih dahulu.');return;}button.disabled=true;button.textContent='MENYIMPAN...';fetch(SCRIPT_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({action:'reply',token:token,status:status,balasan:balasan})}).then(()=>{alert('✅ Balasan berhasil disimpan.');loadAduan();}).catch(err=>{console.error(err);alert('❌ Gagal menyimpan balasan.');}).finally(()=>{button.disabled=false;button.textContent='💬 Simpan Balasan';});}
+loadAduan();
 </script>
-
 </body>
 </html>

@@ -452,8 +452,36 @@
 
         </form>
 
+        <div id="tokenHasil" style="display:none; margin-top:22px; padding:20px; border-radius:18px; background:linear-gradient(135deg,#e9f8ff,#f5fbff); border:1px solid #bfe7f7; text-align:center;">
+            <div style="font-size:14px; color:#527080; margin-bottom:8px;">🔑 Token Aduan Anda</div>
+            <div id="tokenValue" style="font-size:25px; font-weight:800; letter-spacing:2px; color:#176b9c; margin-bottom:10px;"></div>
+            <p style="font-size:13px; color:#657983; margin-bottom:12px;">Simpan token ini untuk mengecek balasan aduan Anda.</p>
+            <button type="button" id="copyToken" class="btn btn-primary">📋 Salin Token</button>
+        </div>
+
     </div>
 
+</section>
+
+<!-- CEK ADUAN -->
+<section class="section" id="cekAduan">
+    <div class="contact-form-wrapper reveal">
+        <div class="section-heading">
+            <span>🔎 CEK ADUAN</span>
+            <h2>Cek Status & Balasan Aduan</h2>
+            <p>Masukkan token aduan untuk melihat perkembangan laporan Anda.</p>
+        </div>
+
+        <form id="cekAduanForm">
+            <div class="form-group">
+                <label for="tokenCek">Token Aduan</label>
+                <input type="text" id="tokenCek" placeholder="Contoh: ADU-8K29P" autocomplete="off" required>
+            </div>
+            <button type="submit" id="cekAduanButton" class="btn btn-primary submit-button">🔎 CEK ADUAN</button>
+        </form>
+
+        <div id="hasilCekAduan" style="display:none; margin-top:22px;"></div>
+    </div>
 </section>
 
 <footer class="footer">
